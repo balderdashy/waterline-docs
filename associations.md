@@ -36,6 +36,7 @@ var User = Waterline.Collection.extend({
   }
 });
 
+// A Pet may only have a single user
 var Pet = Waterline.Collection.extend({
 
   identity: 'user',
@@ -124,9 +125,7 @@ Pet.create({
 .exec(function(err, pet) {
   if(err) // Handle Error
 
-  User.update(123, { pet: pet.id }).exec(function(err, user) {
-
-  });
+  User.update(123, { pet: pet.id }).exec(function(err, user) {});
 
 });
 ```
