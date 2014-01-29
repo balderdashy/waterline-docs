@@ -496,7 +496,7 @@ var User = Waterline.Collection.extend({
 
 ### Associations
 
-Associations are available in Waterline starting in version `0.10`. See [Associations]() for
+Associations are available in Waterline starting in version `0.10`. See [Associations](associations.md) for
 information on how to define and query relations between your models.
 
 ### Configuration
