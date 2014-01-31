@@ -76,7 +76,7 @@ var User = Waterline.Collection.extend({
 
 var Pet = Waterline.Collection.extend({
 
-  identity: 'user',
+  identity: 'pet',
   connection: 'local-postgresql',
 
   attributes: {
@@ -190,7 +190,7 @@ var User = Waterline.Collection.extend({
 // A pet may only belong to a single user
 var Pet = Waterline.Collection.extend({
 
-  identity: 'user',
+  identity: 'pet',
   connection: 'local-postgresql',
 
   attributes: {
@@ -284,7 +284,7 @@ var User = Waterline.Collection.extend({
 // A pet may have many owners
 var Pet = Waterline.Collection.extend({
 
-  identity: 'user',
+  identity: 'pet',
   connection: 'local-postgresql',
 
   attributes: {
