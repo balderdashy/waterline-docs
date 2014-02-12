@@ -259,6 +259,9 @@ Because you may want a model to have multiple many-to-many associations on anoth
 is needed on the `collection` attribute. This states which `model` attribute on the one side of the
 association is used to populate the records.
 
+You will also need to add a `dominant` property on one side of the association. This allows Waterline
+to know which side it can write the joinTable to in the case of different connections.
+
 Using the `User` and `Pet` example lets look at how to build a schema where a `User` may have many
 `Pet` records and a `Pet` may have multiple owners.
 
@@ -276,7 +279,8 @@ var User = Waterline.Collection.extend({
     // Add a reference to Pet
     pets: {
       collection: 'pet',
-      via: 'owners'
+      via: 'owners',
+      dominant: true
     }
   }
 });
