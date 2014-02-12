@@ -83,15 +83,15 @@ Model.find({
 
 The following modifiers are available to use when building queries.
 
-* '<' / 'lessThan'
-* '<=' / 'lessThanOrEqual'
-* '>' / 'greaterThan'
-* '>=' / 'greaterThanOrEqual'
-* '!' / 'not'
-* 'like'
-* 'contains'
-* 'startsWith'
-* 'endsWith'
+* `'<'` / `'lessThan'`
+* `'<='` / `'lessThanOrEqual'`
+* `'>'` / `'greaterThan'`
+* `'>='` / `'greaterThanOrEqual'`
+* `'!'` / `'not'`
+* `'like'`
+* `'contains'`
+* `'startsWith'`
+* `'endsWith'`
 
 
 #### '<' / 'lessThan'
