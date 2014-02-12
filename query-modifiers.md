@@ -1,3 +1,0 @@
-## Query Modifiers
-
-** To-Do **
