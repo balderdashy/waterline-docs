@@ -24,7 +24,7 @@ live in. The following options are available on all `find` and `findOne` queries
 Each option will return an instance of the deferred object used to create the query so each option
 can be chained together to create complex queries.
 
-See [Query Modifiers](query-modifiers.md) for more information on the options available in the
+See [Query Language](query-language.md) for more information on the options available in the
 query language.
 
 ```javascript
@@ -62,7 +62,7 @@ User.findOne()
 ##### .where()
 
 `where` is the primary criteria for your query. Here you specify what you would like to search for
-using any of the supported [Query Modifiers](query-modifiers.md).
+using any of the supported [Query Language](query-language.md).
 
 |     Description     | Accepted Data Types | Required ? |
 |---------------------|---------------------|------------|

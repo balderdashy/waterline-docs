@@ -18,8 +18,8 @@ return a chainable object.
 
 #### .find( `criteria`, [`callback`] )
 
-`find` will return an array of records that match the supplied criteria. Criteria can contain
-any of the [Query Modifiers](query-modifiers.md).
+`find` will return an array of records that match the supplied criteria. Criteria can be built
+using the [Query Language](query-language.md).
 
 |    Description     | Accepted Data Types             | Required ? |
 |--------------------|---------------------------------|------------|
@@ -79,8 +79,8 @@ User.create({
 
 #### .update( `search criteria` , `values` , [`callback`] )
 
-`update` will attempt to update any records matching the criteria passed in. Criteria can contain
-any of the [Query Modifiers](query-modifiers.md).
+`update` will attempt to update any records matching the criteria passed in. Criteria can be built
+using the [Query Language](query-language.md).
 
 |    Description     | Accepted Data Types             | Required ? |
 |--------------------|---------------------------------|------------|
@@ -102,8 +102,8 @@ User.update({ name: 'Walter Jr' }, { name: 'Flynn' })
 
 #### .destroy( `criteria` , [`callback`] )
 
-`destroy` will destroy any records matching the provided criteria. Criteria can contain any of the
-[Query Modifiers](query-modifiers.md).
+`destroy` will destroy any records matching the provided criteria. Criteria can be built
+using the [Query Language](query-language.md).
 
 |    Description     | Accepted Data Types             | Required ? |
 |--------------------|---------------------------------|------------|
