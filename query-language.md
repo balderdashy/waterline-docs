@@ -65,6 +65,16 @@ Model.find({
 });
 ```
 
+#### Not-In Pairs
+
+Not-In queries work similar to `in` queries, except for the nested object criteria.
+
+```javascript
+Model.find({
+  name: { '!' : ['Walter', 'Skyler'] }
+});
+```
+
 #### Or Pairs
 
 Performing `OR` queries is done by using an array of query pairs. Results will be returned that
