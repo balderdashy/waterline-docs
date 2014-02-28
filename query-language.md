@@ -191,6 +191,14 @@ Model.find({ class: { 'endsWith': 'can' }})
 Model.find({ class: { 'like': '%can' }})
 ```
 
+#### 'Date Ranges'
+
+You can do date range queries using the comparison operators.
+
+```javascript
+Model.find({ date: { '>': new Date('2/4/2014'), '<': new Date('2/7/2014') } })
+```
+
 ### Query Options
 
 Query options allow you refine the results that are returned from a query. The current options
