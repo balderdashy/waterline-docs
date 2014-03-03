@@ -56,7 +56,7 @@ User.findOne()
 })
 .fail(function(err){
   // An error occured
-})
+});
 ```
 
 ##### .where()
@@ -70,8 +70,8 @@ using any of the supported [Query Language](query-language.md).
 
 
 ```javascript
-User.find();
-.where({ name: { startsWith: 'w' }});
+User.find()
+.where({ name: { startsWith: 'w' }})
 .exec(function(err, results) {});
 ```
 
