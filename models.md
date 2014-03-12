@@ -506,8 +506,8 @@ a password before creating or automatically generating a slugified url attribute
 
 ### Callbacks on `create`
 
-  - beforeValidation: fn(values, cb)
-  - afterValidation: fn(values, cb)
+  - beforeValidate: fn(values, cb)
+  - afterValidate: fn(values, cb)
   - beforeCreate: fn(values, cb)
   - afterCreate: fn(newlyInsertedRecord, cb)
 
@@ -554,8 +554,8 @@ var User = Waterline.Collection.extend({
 
 ### Callbacks on `update`
 
-  - beforeValidation: fn(valuesToUpdate, cb)
-  - afterValidation: fn(valuesToUpdate, cb)
+  - beforeValidate: fn(valuesToUpdate, cb)
+  - afterValidate: fn(valuesToUpdate, cb)
   - beforeUpdate: fn(valuesToUpdate, cb)
   - afterUpdate: fn(updatedRecord, cb)
 
@@ -582,7 +582,7 @@ var User = Waterline.Collection.extend({
     citizen_id: 'integer'
   },
 
-  beforeValidation: function(citizen_record, next){
+  beforeValidate: function(citizen_record, next){
     Probable_suspects.findOne(citizen_record.citizen_id).exec(function(err, suspect) {
       if(err) return next(err);
       if(!suspect) return next(new Error('This citizen is not a suspect'));
