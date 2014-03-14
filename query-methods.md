@@ -111,7 +111,7 @@ using the [Query Language](query-language.md).
 |     Callback       |   `function`                    |   No       |
 
 ```javascript
-User.update({ name: 'Flynn' })
+User.destroy({ name: 'Flynn' })
 .exec(function(err) {});
 ```
 
