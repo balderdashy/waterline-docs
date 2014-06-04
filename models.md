@@ -239,7 +239,7 @@ Validations are handled by [Anchor](https://github.com/balderdashy/anchor) which
 [Node Validate](https://github.com/chriso/node-validator) and supports most of the properties in
 node-validate. For a full list of validations see: [Anchor Validations](https://github.com/balderdashy/anchor/blob/master/lib/rules.js).
 
-Validations are defined directly in you Collection attributes. In addition you may set the attribute
+Validations are defined directly in your Collection attributes. In addition you may set the attribute
 type to any supported Anchor type and Waterline will build a validation and set the schema type as
 a string for that attribute.
 
@@ -470,7 +470,7 @@ var User = Waterline.Collection.extend({
 
 #### toObject/toJSON Instance Methods
 
-The toObject() method will return the currently set model values only, without any of the instance
+The `toObject()` method will return the currently set model values only, without any of the instance
 methods attached. Useful if you want to change or remove values before sending to the client.
 
 However we provide an even easier way to filter values before returning to the client by allowing
@@ -561,7 +561,7 @@ var User = Waterline.Collection.extend({
 
 #### Example
 
-Youre the NSA and you need to update the record of a person who is a suspect!  First though, you
+You're the NSA and you need to update the record of a person who is a suspect!  First though, you
 need to make sure that the record concerns a person of interest. You might want to use the
 `beforeValidation` lifecycle callback to see if the record's `citizen_id` exists in your
 `Probable_suspects` model.
