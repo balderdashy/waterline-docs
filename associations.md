@@ -216,7 +216,7 @@ Pet.create({
   name: 'fido',
 
   // Set the User's Primary Key to associate the Pet with the User.
-  user: 123
+  owner: 123
 })
 .exec(function(err, pet) {});
 ```
