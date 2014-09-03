@@ -36,7 +36,7 @@ var User = Waterline.Collection.extend({
   }
 });
 
-// A Pet may only have a single user
+// A Pet may have multiple users
 var Pet = Waterline.Collection.extend({
 
   identity: 'pet',
