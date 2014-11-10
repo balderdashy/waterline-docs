@@ -36,8 +36,8 @@ User.find()
 .exec(function(err, users) {});
 ```
 
-For convience, promises are supported if you choose to use them. Promises use the [Q library](https://github.com/kriskowal/q),
-so anything you do after the first then call (or spread, or fail), will be a complete Q promise
+For convience, promises are supported if you choose to use them. Promises use the [Bluebird library](https://github.com/petkaantonov/bluebird),
+so anything you do after the first then call (or spread, or catch), will be a complete Bluebird promise
 object. Remember, you must end the query somehow (by calling then or one of the other functions)
 in order to complete the database request.
 
@@ -54,7 +54,7 @@ User.findOne()
 .spread(function(userId, friendsList, comments){
 
 })
-.fail(function(err){
+.catch(function(err){
   // An error occured
 });
 ```
