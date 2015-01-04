@@ -1,6 +1,6 @@
 ## Models
 
-Models represent a structure of data which requires persistant storage. The data may live in any
+Models represent a structure of data which requires persistent storage. The data may live in any
 data-store but is interfaced in the same way. This allows your users to live in PostgreSQL and your
 user preferences to live in MongoDB and you will interact with the data models in the exact same way.
 
