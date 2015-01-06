@@ -595,7 +595,7 @@ var User = Waterline.Collection.extend({
 ### Callbacks on `destroy`
 
   - beforeDestroy: fn(criteria, cb)
-  - afterDestroy: fn(cb)
+  - afterDestroy: fn(deletedRecord, cb)
 
 #### Example
 
@@ -612,7 +612,7 @@ var User = Waterline.Collection.extend({
     name: 'string'
   },
 
-  afterDestroy: function(next){
+  afterDestroy: function(deleted_record, next){
     Cache.sync(next);
   }
 
