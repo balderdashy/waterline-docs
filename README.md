@@ -11,6 +11,8 @@ It is written entirely in Javascript and runs on Node.js.
 
 * [Models](models.md)
 * [Queries](query.md)
+  * [Query Language](query-language.md)
+  * [Query Methods](query-methods.md)
 * [Associations](associations.md)
 
 ### Supported Adapters
