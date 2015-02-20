@@ -28,7 +28,10 @@ using the [Query Language](query-language.md).
 
 ```javascript
 User.find({ name: 'Walter Jr' })
-.exec(function(err, users) {});
+.exec(function(err, users) {
+//either user(s) with the name 'Walter Jr' get returned or 
+//a single user gets created with the name 'Walter Jr' and returned
+});
 ```
 
 ##### Notes
