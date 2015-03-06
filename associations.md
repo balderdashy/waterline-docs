@@ -6,7 +6,7 @@ the data as if they lived together on the same database. You can also have assoc
 live on seperate connections or in different databases within the same adapter.
 
 The following guides will walk you through the various ways that your data can be associated and
-how to setup and query assocatiated data.
+how to setup and query associated data.
 
 ### One-to-One Associations
 
