@@ -317,7 +317,7 @@ Both these methods are sync methods that will queue up a set of operations to be
 is saved. If a primary key is used for the value on an `add` a new record in the join table will be
 created linking the current model to the record specified in the primary key. However if an object
 is used as the value in an `add` a new model will be created and then the primary key of that model
-will be used in the new join table record.
+will be used in the new join table record. You can also use an array of previous values.
 
 ###### When Both Records Exist
 
@@ -343,6 +343,22 @@ User.findOne(2).exec(function(err, user) {
 
   // Queue up a new pet to be added and a record to be created in the join table
   user.pets.add({ breed: 'labrador', type: 'dog', name: 'fido' });
+
+  // Save the user, creating the new pet and associations in the join table
+  user.save(function(err) {});
+});
+```
+
+###### With An Array of New Record
+
+```javascript
+// Given a User with ID 2 and a Pet with ID 20, 24, 31
+
+User.findOne(2).exec(function(err, user) {
+  if(err) // handle error
+
+  // Queue up a record to be inserted into the join table
+  user.pets.add([ 20, 24, 31 ]);
 
   // Save the user, creating the new pet and associations in the join table
   user.save(function(err) {});
