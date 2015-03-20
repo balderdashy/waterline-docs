@@ -26,6 +26,12 @@ It is written entirely in Javascript and runs on Node.js.
 | [Sails-Disk](https://github.com/balderdashy/sails-disk)                         | [balderdash](https://github.com/balderdashy) |
 | [Sails-Memory](https://github.com/balderdashy/sails-memory)                     | [balderdash](https://github.com/balderdashy) |
 
+### Community Adapters
+
+|    Name                                                                         | Maintainer                                 |
+|---------------------------------------------------------------------------------|--------------------------------------------|
+| [waterline-orientdb](https://github.com/appscot/waterline-orientdb)             | [appscot](https://github.com/appscot)      |
+
 
 If you have an adapter you would like added, submit a PR and add it to the list.
 
