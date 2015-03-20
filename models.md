@@ -25,7 +25,7 @@ will track when a record went into the datastore and when it was last updated.
 ```javascript
 var Person = Waterline.Collection.extend({
 
-  // Idenitity is a unique name for this model and must be in lower case
+  // Identity is a unique name for this model and must be in lower case
   identity: 'person',
 
   // Connection
