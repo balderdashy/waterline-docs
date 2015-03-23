@@ -25,7 +25,7 @@ will track when a record went into the datastore and when it was last updated.
 ```javascript
 var Person = Waterline.Collection.extend({
 
-  // Idenitity is a unique name for this model
+  // Identity is a unique name for this model and must be in lower case
   identity: 'person',
 
   // Connection
@@ -632,7 +632,7 @@ is synced with the datastore and allows you to turn off default behaviour.
 ###### identity
 
 A required property on each model which describes the name of the model. This must be unique per
-instance of Waterline.
+instance of Waterline and it must be in lower case.
 
 ```javascript
 var Foo = Waterline.Collection.extend({
