@@ -77,6 +77,32 @@ User.create({
 
 
 
+#### .findOrCreate( `search criteria`, [`values`, `callback`] )
+
+`findOrCreate` will return a single record if one was found or created, or an array of records if multiple get found/created via the supplied criteria or values. Criteria can be built
+using the [Query Language](query-language.md).
+
+|    Description     | Accepted Data Types             | Required ? |
+|--------------------|---------------------------------|------------|
+|   Find Criteria    |   `{}`,`[{}]`, `string`, `int`  |   Yes      |
+|   Creation Values   |   `{}`,`[{}]`                   |   No      |
+|     Callback       |   `function`                    |   No       |
+
+```javascript
+User.findOrCreate({ name: 'Walter Jr' })
+.exec(function(err, users) {
+//either user(s) with the name 'Walter Jr' get returned or 
+//a single user gets created with the name 'Walter Jr' and returned
+});
+```
+
+##### Notes
+> Any string arguments passed must be the ID of the record.
+> This method can return a single record or an Array of records
+> If model not found and creation values are ommitted, it will get created with the supplied criteria values
+
+
+
 #### .update( `search criteria` , `values` , [`callback`] )
 
 `update` will attempt to update any records matching the criteria passed in. Criteria can be built
