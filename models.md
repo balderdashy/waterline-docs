@@ -753,6 +753,39 @@ var Foo = Waterline.Collection.extend({
 });
 ```
 
+#### Using an Existing Database
+  
+There might be times when you want to use an existing database in your models.
+
+In this example, the WB Company has prefixed all of their fields with `wb_`. You'll notice that you can use the `tableName` attribute, but also `columnName` in the `attributes` object. Additionally, we will set `migrate: 'safe'` so that Waterline doesn't attempt to add/remove fields or otherwise automatically restructure the existing database.
+
+```javascript
+var Widget = Waterline.Collection.extend({
+  identity: 'wbwidget',
+  connection: 'wb-widget-database',
+  tableName: 'wb_widgets',
+  attributes: {
+    id: {
+      type: 'integer',
+      columnName: 'wb_id',
+      primaryKey: true
+    },
+    name: {
+      type: 'string',
+      columnName: 'wb_name'
+    },
+    description: {
+      type: 'text',
+      columnName: 'wb_description'
+    }
+    autoPK: false,
+    autoCreatedAt: false,
+    autoUpdatedAt: false,
+  }
+});
+```
+`autoPK`, `autoCreatedAt`, and `autoUpdatedAt` are set to false in this example, because we want the model to be read-only from existing fields.
+
 ### Class Methods
 
 "Class" methods are functions available at the top level of a model. They can be called anytime after
