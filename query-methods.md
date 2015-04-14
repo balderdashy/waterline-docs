@@ -149,7 +149,7 @@ User.destroy({ name: 'Flynn' })
 
 #### .query( `query`, `[data]`, `callback` )
 
-Some adapters, such as [sails-mysql](https://github.com/balderdashy/sails-mysql) and [sails-postgresql(https://github.com/balderdashy/sails-postgresql), support the `query` function which will run the proved RAW query against the database. This can sometimes be useful if you want to run complex queries and performance is very important.
+Some adapters, such as [sails-mysql](https://github.com/balderdashy/sails-mysql) and [sails-postgresql](https://github.com/balderdashy/sails-postgresql), support the `query` function which will run the proved RAW query against the database. This can sometimes be useful if you want to run complex queries and performance is very important.
 
 |    Description     | Accepted Data Types             | Required ? |
 |--------------------|---------------------------------|------------|
@@ -159,14 +159,17 @@ Some adapters, such as [sails-mysql](https://github.com/balderdashy/sails-mysql)
 
 ```javascript
 var title = "The King's Speech";
-User.query('SELECT * FROM movie WHERE title = $1', [title], function(err, results) {
-  // Actual results are in results.rows
+Movie.query('SELECT * FROM movie WHERE title = $1', [title], function(err, results) {
+  // using sails-postgresql
   console.log('Found the following movie: ', results.rows[0]);
+  
+  // using sails-mysql
+  console.log('Found the following movie: ', results[0]);
 });
 ```
 
 ##### Notes
-> This method will ALWAYS return an array of record-objects in the 'rows' property of results.
+> The type of the results returned depend on your adapter: sails-mysql returns an array of objects and sails-postgresql returns an object containing metadata and the actual results within a 'rows' array.
 > This function does currently not support promises.
 
 
