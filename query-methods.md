@@ -147,6 +147,30 @@ User.destroy({ name: 'Flynn' })
 
 
 
+#### .query( `query`, [data], `callback` )
+
+Some adapters, such as [sails-mysql](https://github.com/balderdashy/sails-mysql) and [sails-postgresql(https://github.com/balderdashy/sails-postgresql), support the `query` function which will run the proved RAW query against the database. This can sometimes be useful if you want to run complex queries and performance is very important.
+
+|    Description     | Accepted Data Types             | Required ? |
+|--------------------|---------------------------------|------------|
+|     query          |   `string`                      |   Yes      |
+|     data           |   `array`                       |   No       |
+|     Callback       |   `function`                    |   Yes      |
+
+```javascript
+var title = "The King's Speech";
+User.query('SELECT * FROM movie WHERE title = $1', [title], function(err, results) {
+  // Actual results in results.rows
+  console.log('Found the following movie: ' + results.rows[0]);
+});
+```
+
+##### Notes
+> This method will ALWAYS return an array of record-objects in the 'rows' property of results.
+> This function does currently not support promises.
+
+
+
 ## Aggregates
 
 ** To-DO **
