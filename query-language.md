@@ -207,6 +207,7 @@ available are:
 * `limit`
 * `skip`
 * `sort`
+* `select`
 
 #### Limit
 
@@ -252,4 +253,13 @@ Model.find({ where: { name: 'foo' }, sort: { 'name': 1 }});
 
 // Sort by multiple attributes
 Model.find({ where: { name: 'foo' }, sort: { name:  1, age: 0 });
+```
+
+#### Select
+
+Apply a projection to a waterline query.
+
+```javascript
+// Returns only the field name
+Model.find({ where: age: { '<': 30 }, select: ['name'] })
 ```
