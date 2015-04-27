@@ -116,7 +116,7 @@ on the data.
 
 ###### defaultsTo
 
-Will set a default value on an attribute if one is not supplied when the record is created. The supllied value can also be a 
+Will set a default value on an attribute if one is not supplied when the record is created. The supplied value can also be a 
 function that waterline will run while creating the record.
 
 ```javascript
