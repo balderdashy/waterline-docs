@@ -116,13 +116,20 @@ on the data.
 
 ###### defaultsTo
 
-Will set a default value on an attribute if one is not supplied when the record is created.
+Will set a default value on an attribute if one is not supplied when the record is created. The supplied value can also be a 
+function that waterline will run while creating the record.
 
 ```javascript
 attributes: {
   phoneNumber: {
     type: 'string',
     defaultsTo: '111-222-3333'
+  },
+  id: {
+    type: 'text',
+    primaryKey: true,
+    unique: true,
+    defaultsTo: function() { return uuid.v4(); }
   }
 }
 ```
