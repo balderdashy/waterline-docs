@@ -100,6 +100,12 @@ User.findOrCreate({ name: 'Walter Jr' })
 > Any string arguments passed must be the ID of the record.
 > This method can return a single record or an Array of records
 > If model not found and creation values are ommitted, it will get created with the supplied criteria values
+>
+> **Warning**
+>
+> Unless an adapter implements its own version of `findOrCreate`, `findOrCreate` will do the `find` and `create` calls
+> in two separate steps (not transactional). In a high frequency scenario it's possible for duplicates to be created
+> if the query field(s) are not indexed.
 
 
 
