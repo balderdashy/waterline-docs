@@ -454,6 +454,34 @@ var User = Waterline.Collection.extend({
 });
 ```
 
+#### Ignored Properties
+
+If you want to build custom functionality on top of Waterline models and you need to define custom model attribute properties, the Waterline validations will probably throw an error. If you know what you're doing, you can tell Waterline to ignore certain properties and not run validations for them (so this is different from custom validations).
+
+In sails/config/models.js you can add a `validations` section and define an array of properties to ignore.
+```javascript
+	validations: {
+		ignoreProperties: [ 'async', 'special']
+	},
+```
+
+Example model:
+```javascript
+attributes: {
+  email: {
+    type: 'email',
+    special: true // ignored by validation
+  },
+  cousins: {
+    collection: 'related',
+    via: 'property',
+    async: true // ignored by validation
+  }
+}
+```
+
+Be warned, that Waterline may implement more keywords in the future which would conflict with any custom keywords in your application.
+
 ### Instance Methods
 
 You can attach instance methods to a model which will be available on any record returned from a
