@@ -1,7 +1,7 @@
 # Instance and Class Methods in Waterline Models
 
 * [Instance methods](#instance-methods)
-  - [toObject/toJSON](#toobject-tojson)
+  - [toObject/toJSON](#toobjecttojson)
 * [Class methods](#class-methods)
 
 ## Instance methods
