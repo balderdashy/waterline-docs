@@ -1,4 +1,4 @@
-## Query Methods
+# Query Methods
 
 Every model in Waterline will have a set of query methods exposed on it to allow you to interact
 with the database in a normalized fashion. These are known as the CRUD (Create-Read-Update-Delete)
@@ -9,14 +9,14 @@ that are dynamically generated when you initialize Waterline. We call them dynam
 perform many of the same functions as the other class methods but you can call them directly on an
 attribute in your model.
 
-#### Notes
+##### Notes
 
 > For most class methods, the callback parameter is optional and if one is not supplied, it will
 return a chainable object.
 
-### CRUD Methods
+## CRUD Methods
 
-#### .find( `criteria`, [`callback`] )
+### .find( `criteria`, [`callback`] )
 
 `find` will return an array of records that match the supplied criteria. Criteria can be built
 using the [Query Language](query-language.md).
@@ -32,13 +32,14 @@ User.find({ name: 'Walter Jr' })
 ```
 
 ##### Notes
+
 > Any string arguments passed must be the ID of the record.
 > This method will ALWAYS return records in an array.
 > If you are trying to find an attribute that is an array, you must wrap it in an additional set of brackets otherwise Waterline will think you want to perform an inQuery.
 
 
 
-#### .findOne( `criteria`, [`callback`] )
+### .findOne( `criteria`, [`callback`] )
 
 `findOne` will return an object with the first matching result in the data store.
 
@@ -58,7 +59,7 @@ User.findOne({ name: 'Walter Jr' })
 
 
 
-#### .create( `criteria`, [`callback`] )
+### .create( `criteria`, [`callback`] )
 
 `create` will attempt to create a new record in the datastore. If the data is valid and passes all
 validations it will be sent to the adapters `create` method.
@@ -77,7 +78,7 @@ User.create({
 
 
 
-#### .findOrCreate( `search criteria`, [`values`, `callback`] )
+### .findOrCreate( `search criteria`, [`values`, `callback`] )
 
 `findOrCreate` will return a single record if one was found or created, or an array of records if multiple get found/created via the supplied criteria or values. Criteria can be built
 using the [Query Language](query-language.md).
@@ -109,7 +110,7 @@ User.findOrCreate({ name: 'Walter Jr' })
 
 
 
-#### .update( `search criteria` , `values` , [`callback`] )
+### .update( `search criteria` , `values` , [`callback`] )
 
 `update` will attempt to update any records matching the criteria passed in. Criteria can be built
 using the [Query Language](query-language.md).
@@ -132,7 +133,7 @@ User.update({ name: 'Walter Jr' }, { name: 'Flynn' })
 
 
 
-#### .destroy( `criteria` , [`callback`] )
+### .destroy( `criteria` , [`callback`] )
 
 `destroy` will destroy any records matching the provided criteria. Criteria can be built
 using the [Query Language](query-language.md).
@@ -153,7 +154,7 @@ User.destroy({ name: 'Flynn' })
 
 
 
-#### .query( `query`, `[data]`, `callback` )
+### .query( `query`, `[data]`, `callback` )
 
 Some adapters, such as [sails-mysql](https://github.com/balderdashy/sails-mysql) and [sails-postgresql](https://github.com/balderdashy/sails-postgresql), support the `query` function which will run the proved RAW query against the database. This can sometimes be useful if you want to run complex queries and performance is very important.
 
