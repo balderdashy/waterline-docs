@@ -1,5 +1,4 @@
-Waterline v0.10 Documentation
-====================================
+# Waterline v0.10 Documentation
 
 ## Table of Contents
 
@@ -7,21 +6,29 @@ Waterline v0.10 Documentation
   * [Installation](introduction/installation.md)
   * [Getting Started](introduction/getting-started.md)
 * [Models](models/models.md)
+  * [Data types & attribute properties](models/data-types-attributes.md)
   * [Validations](models/validations.md)
   * [Lifecycle Callbacks](models/lifecycle-callbacks.md)
   * [Associations](models/associations/associations.md)
+    - [Dominance](models/associations/dominance.md)
     - [One-to-one](models/associations/one-to-one.md)
     - [One-to-many](models/associations/one-to-many.md)
     - [Many-to-many](models/associations/many-to-many.md)
     - [Many-to-many through](models/associations/many-to-many-through.md)
+  * [Instance & Class Methods](models/instance-class-methods.md)
+  * [Configuration](models/configuration.md)
 * [Queries](queries/query.md)
   * [Query Language](queries/query-language.md)
   * [Query Methods](queries/query-methods.md)
 * [Adapters](adapters/adapters.md)
+* [Testing](testing/testing.md)
+* [Integration](integration/integration.md)
+  * [Sails](integration/sails.md)
 * [Examples](examples/examples.md)
+* [Roadmap](ROADMAP.md)
 * [Contributing](CONTRIBUTING.md)
 
-### Supported Adapters
+## Supported Adapters
 
 |    Name                                                                         | Maintainer                                   | Build Status (edge)                                                                                                                         | Latest Stable Version                                                                                     |
 |---------------------------------------------------------------------------------|----------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------|
@@ -32,7 +39,7 @@ Waterline v0.10 Documentation
 | [Sails-Disk](https://github.com/balderdashy/sails-disk)                         | [balderdash](https://github.com/balderdashy) | [![Build Status](https://travis-ci.org/balderdashy/sails-disk.svg?branch=master)](https://travis-ci.org/balderdashy/sails-disk)             | [![npm version](https://badge.fury.io/js/sails-disk.svg)](http://badge.fury.io/js/sails-disk) 
 | [Sails-Memory](https://github.com/balderdashy/sails-memory)                     | [balderdash](https://github.com/balderdashy) | [![Build Status](https://travis-ci.org/balderdashy/sails-memory.svg?branch=master)](https://travis-ci.org/balderdashy/sails-memory)         | [![npm version](https://badge.fury.io/js/sails-memory.svg)](http://badge.fury.io/js/sails-memory) 
 
-### Community Adapters
+## Community Adapters
 
 |    Name                                                                         | Maintainer                                   | Build Status (edge)                                                                                                                         | Latest Stable Version                                                                                     |
 |---------------------------------------------------------------------------------|----------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------|
@@ -45,7 +52,7 @@ Waterline v0.10 Documentation
 If you have an adapter you would like added, submit a PR and add it to the list.
 
 
-### Core modules
+## Core modules
 
 | Repo          |  Build Status (edge)                  |  Latest Stable Version   |
 |---------------|---------------------------------------|--------------------------|
