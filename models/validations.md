@@ -1,4 +1,4 @@
-### Validations
+# Validations in Waterline Models
 
 Validations are handled by [Anchor](https://github.com/balderdashy/anchor) which is based off of
 [Node Validate](https://github.com/chriso/validator.js) and supports most of the properties in
@@ -106,7 +106,7 @@ attributes: {
 }
 ```
 
-###### Validation Rules
+## Validation rules
 
 | Name of validator | What does it check? | Notes on usage |
 |-------------------|---------------------|----------------|
@@ -169,7 +169,7 @@ attributes: {
 |uuidv3| checks if `string` in this record is a UUID (v3) | |
 |uuidv4| checks if `string` in this record is a UUID (v4) | |
 
-#### Custom Validations
+## Custom Validations
 
 You can define your own types and their validation with the `types` object. It's possible to access
 and compare values to other attributes. This allows you to move validation business logic into your
@@ -212,7 +212,7 @@ var User = Waterline.Collection.extend({
 });
 ```
 
-#### Ignored Properties
+## Ignored Properties
 
 If you want to build custom functionality on top of Waterline models and you need to define custom model attribute properties, the Waterline validations will probably throw an error. If you know what you're doing, you can tell Waterline to ignore certain properties and not run validations for them (so this is different from custom validations).
 
@@ -237,4 +237,3 @@ attributes: {
   }
 }
 ```
-

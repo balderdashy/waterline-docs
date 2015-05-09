@@ -14,15 +14,15 @@ data without relying on any one type of database.
 * [Validations](validations.md)
 * [Lifecycle callbacks](lifecycle-callbacks.md)
 * [Associations](associations/associations.md)
-  - [Dominance](associations/dominance.md)
   - [One-to-one](associations/one-to-one.md)
   - [One-to-many](associations/one-to-many.md)
   - [Many-to-many](associations/many-to-many.md)
   - [Many-to-many through](associations/many-to-many-through.md)
+  - [Dominance](associations/dominance.md)
 * [Instance & class methods](instance-class-methods.md)
 * [Configuration](configuration.md)
 
-## How Do I Define A Model
+## How to define a model
 
 Model definitions contain `attributes`, `validations`, `instance methods`, `lifecycle callbacks`
 and `class methods`. To define a model you will extend the `Waterline.Collection` object and add
@@ -103,12 +103,13 @@ var Person = Waterline.Collection.extend({
 });
 ```
 
-
-## Using an Existing Database
+## Using an existing database
   
 There might be times when you want to use an existing database in your models.
 
-In this example, the WB Company has prefixed all of their fields with `wb_`. You'll notice that you can use the `tableName` attribute, but also `columnName` in the `attributes` object. Additionally, we will set `migrate: 'safe'` so that Waterline doesn't attempt to add/remove fields or otherwise automatically restructure the existing database.
+It is **extremely important** to set the `migrate` property to `safe` in your models when working with existing databases. If you do not to this, you will very likely **lose data** and do other terrible things as it tries to automatically adjust the schema.
+
+In this example, the WB Company has prefixed all of their fields with `wb_`. You'll notice that you can use the `tableName` attribute, but also `columnName` in the `attributes` object.
 
 ```javascript
 var Widget = Waterline.Collection.extend({
@@ -129,11 +130,26 @@ var Widget = Waterline.Collection.extend({
       type: 'text',
       columnName: 'wb_description'
     }
+    migrate: 'safe',
     autoPK: false,
     autoCreatedAt: false,
     autoUpdatedAt: false,
   }
 });
 ```
-`autoPK`, `autoCreatedAt`, and `autoUpdatedAt` are set to false in this example, because we want the model to be read-only from existing fields.
+In addition, settings for automatically generating the primary key field (`autoPK`), the created timestamp (`autoCreatedAt`), and the modified timestamp (`autoUpdatedAt`) are disabled in this example because either the model specifies them specifically, or they are actually absent from the existing database table.
+
+## Model property summary
+
+All of these properties can be set as global defaults, or can be individually set in each model.
+
+Property | Value | Default | Description
+:---: | :---: | :---: | ---
+`connection` | `string` | - | The name of the connection to use for the model.
+`identity` | `string` | - | The programmatic name for the model.
+`tableName` | `string` | - | Use a custom database table/collection name rather than inferring it from the name of the model.
+`migrate` | `string` | `alter` | Sets the schema to automatically `alter` the schema, `drop` the schema or make no changes (`safe`).
+`autoPK` | `boolean` | `true` | Automatically add an `id` attribute to the model to be the primary key.
+`autoCreatedAt` | `date` | Current time | Automatically add a `createdAt` date attribute to the model.
+`autoUpdatedAt` | `date` | The created time | Automatically add a `updatedAt` date attribute to the model.
 

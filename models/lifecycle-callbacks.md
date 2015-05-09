@@ -1,17 +1,17 @@
-### Lifecycle Callbacks
+# Lifecycle Callbacks
 
 Lifecycle callbacks are functions you can define to run at certain times in a query. They are hooks
 that you can tap into in order to change data. An example use case would be automatically encrypting
 a password before creating or automatically generating a slugified url attribute.
 
-### Callbacks on `create`
+## Callbacks on `create`
 
   - beforeValidate: fn(values, cb)
   - afterValidate: fn(values, cb)
   - beforeCreate: fn(values, cb)
   - afterCreate: fn(newlyInsertedRecord, cb)
 
-#### Example
+### Example
 
 If you want to encrypt a password before saving in the database you can use the `beforeCreate`
 lifecycle callback.
@@ -40,11 +40,12 @@ var User = Waterline.Collection.extend({
 
   },
 
-
   // Lifecycle Callbacks
   beforeCreate: function(values, next) {
     bcrypt.hash(values.password, 10, function(err, hash) {
-      if(err) return next(err);
+      if (err) {
+        return next(err);
+      }
       values.password = hash;
       next();
     });
@@ -52,14 +53,14 @@ var User = Waterline.Collection.extend({
 });
 ```
 
-### Callbacks on `update`
+## Callbacks on `update`
 
   - beforeValidate: fn(valuesToUpdate, cb)
   - afterValidate: fn(valuesToUpdate, cb)
   - beforeUpdate: fn(valuesToUpdate, cb)
   - afterUpdate: fn(updatedRecord, cb)
 
-#### Example
+### Example
 
 You're the NSA and you need to update the record of a person who is a suspect!  First though, you
 need to make sure that the record concerns a person of interest. You might want to use the
@@ -84,20 +85,26 @@ var User = Waterline.Collection.extend({
 
   beforeValidate: function(citizen_record, next){
     Probable_suspects.findOne(citizen_record.citizen_id).exec(function(err, suspect) {
-      if(err) return next(err);
-      if(!suspect) return next(new Error('This citizen is not a suspect'));
+      if (err) {
+        return next(err);
+      }
+      if (!suspect) {
+        return next(new Error('This citizen is not a suspect'));
+      }
       next();
     });
   }
 };
 ```
 
-### Callbacks on `destroy`
+Note that in the example above, the `Probable_suspects` would have had to be declared in the global scope (which is default behaviour when using Sails.js).
+
+## Callbacks on `destroy`
 
   - beforeDestroy: fn(criteria, cb)
   - afterDestroy: fn(deletedRecord, cb)
 
-#### Example
+### Example
 
 You want to update a cache to remove a record after it has been destroyed. To do this you can use
 the `afterDestroy` lifecycle callback.
@@ -115,7 +122,6 @@ var User = Waterline.Collection.extend({
   afterDestroy: function(deleted_record, next){
     Cache.sync(next);
   }
-
 };
 ```
 

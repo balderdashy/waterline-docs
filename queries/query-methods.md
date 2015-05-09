@@ -179,8 +179,6 @@ Movie.query('SELECT * FROM movie WHERE title = $1', [title], function(err, resul
 > The type of the results returned depend on your adapter: sails-mysql returns an array of objects and sails-postgresql returns an object containing metadata and the actual results within a 'rows' array.
 > This function does currently not support promises.
 
-
-
 ## Aggregates
 
 ** To-DO **

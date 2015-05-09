@@ -1,6 +1,6 @@
 # Data Types and Attribute Properties in Waterline Models
 
-## Data Types and Attribute Properties
+## Data Types
 
 The following data types are currently available:
 
@@ -20,7 +20,7 @@ These will map to the underlying database type if available. If a database doesn
 a polyfill will be used. For example when using an array or json type in MySQL the values will be
 stringified before being saved.
 
-### Attribute Properties
+## Attribute Properties
 
 These properties are also available on an attribute and can be used to enforce various constraints
 on the data.
@@ -40,7 +40,9 @@ attributes: {
     type: 'text',
     primaryKey: true,
     unique: true,
-    defaultsTo: function() { return uuid.v4(); }
+    defaultsTo: function() {
+      return uuid.v4();
+    }
   }
 }
 ```

@@ -8,9 +8,9 @@ live on seperate connections or in different databases within the same adapter.
 The following guides will walk you through the various ways that your data can be associated and
 how to setup and query associated data.
 
-* [Dominance](associations/dominance.md)
 * [One-to-one](associations/one-to-one.md)
 * [One-to-many](associations/one-to-many.md)
 * [Many-to-many](associations/many-to-many.md)
 * [Many-to-many through](associations/many-to-many-through.md)
+* [Dominance](associations/dominance.md)
 
