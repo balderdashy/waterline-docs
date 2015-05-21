@@ -261,5 +261,5 @@ Apply a projection to a waterline query.
 
 ```javascript
 // Returns only the field name
-Model.find({ where: age: { '<': 30 }, select: ['name'] })
+Model.find({ where: { age: { '<': 30 } }, select: ['name'] })
 ```
