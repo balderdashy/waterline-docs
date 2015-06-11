@@ -1,5 +1,11 @@
 # Integrating Waterline in Sails.js
 
-It's already done and here's what sails does for you automatically:
+## Notes for models
 
-...
+In `sails/config/models.js` you can add a `validations` section and define an array of properties to ignore.
+
+```javascript
+	validations: {
+		ignoreProperties: [ 'async', 'special']
+	},
+```

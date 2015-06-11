@@ -216,13 +216,6 @@ var User = Waterline.Collection.extend({
 
 If you want to build custom functionality on top of Waterline models and you need to define custom model attribute properties, the Waterline validations will probably throw an error. If you know what you're doing, you can tell Waterline to ignore certain properties and not run validations for them (so this is different from custom validations).
 
-In sails/config/models.js you can add a `validations` section and define an array of properties to ignore.
-```javascript
-	validations: {
-		ignoreProperties: [ 'async', 'special']
-	},
-```
-
 Example model:
 ```javascript
 attributes: {
