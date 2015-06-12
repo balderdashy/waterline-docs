@@ -1,11 +1,11 @@
 # Waterline Model Configuration
 
-### Configuration
+## Configuration
 
 You can define certain top level properties on a per model basis. These will define how your schema
 is synced with the datastore and allows you to turn off default behaviour.
 
-###### identity
+#### identity
 
 A required property on each model which describes the name of the model. This must be unique per
 instance of Waterline and it must be in lower case.
@@ -18,7 +18,7 @@ var Foo = Waterline.Collection.extend({
 });
 ```
 
-###### connection
+#### connection
 
 A required property on each model that describes which connection queries will be run on. You can use
 either a string or an array for the value of this property. If an array is used your model will have
@@ -47,10 +47,27 @@ var Bar = Waterline.Collection.extend({
 });
 ```
 
-###### autoPK
+#### migrate
 
-A flag to toggle the automatic primary key generation. If turned off no primary key will be created
-by default and one will need to be defined.
+Sets the schema to automatically `alter` the schema, `drop` the schema or make no changes (`safe`). Default: `alter`
+
+```javascript
+var Foo = Waterline.Collection.extend({
+
+  identity: 'foo',
+  connection: 'my-local-postgresql',
+  migrate: 'alter',
+  // ...
+});
+```
+
+It is **extremely important** to set the `migrate` property to `safe` in your models when working with existing databases. If you do not to this, you will very likely **lose data** and do other terrible things as it tries to automatically adjust the schema.
+
+#### autoPK
+
+A flag to toggle the automatic primary key generation. Default: `true`. 
+
+If turned off no primary key will be created by default and one will need to be defined.
 
 ```javascript
 var Foo = Waterline.Collection.extend({
@@ -58,14 +75,14 @@ var Foo = Waterline.Collection.extend({
   identity: 'foo',
   connection: 'my-local-postgresql',
 
-  autoPK: false
-
+  autoPK: false,
+  // ...
 });
 ```
 
-###### autoCreatedAt
+#### autoCreatedAt
 
-A flag to toggle the automatic timestamp for createdAt.
+A flag to toggle the automatic timestamp for createdAt. Default: `true`.
 
 ```javascript
 var Foo = Waterline.Collection.extend({
@@ -73,14 +90,14 @@ var Foo = Waterline.Collection.extend({
   identity: 'foo',
   connection: 'my-local-postgresql',
 
-  autoCreatedAt: false
-
+  autoCreatedAt: false,
+  // ...
 });
 ```
 
-###### autoUpdatedAt
+#### autoUpdatedAt
 
-A flag to toggle the automatic timestamp for updatedAt.
+A flag to toggle the automatic timestamp for updatedAt. Default: `true`.
 
 ```javascript
 var Foo = Waterline.Collection.extend({
@@ -88,12 +105,12 @@ var Foo = Waterline.Collection.extend({
   identity: 'foo',
   connection: 'my-local-postgresql',
 
-  autoUpdatedAt: false
-
+  autoUpdatedAt: false,
+  // ...
 });
 ```
 
-###### schema
+#### schema
 
 A flag to toggle schemaless or schema mode in databases that support schemaless data structures. If
 turned off this will allow you to store arbitrary data in a record. If turned on, only attributes
@@ -108,14 +125,14 @@ var Foo = Waterline.Collection.extend({
   identity: 'foo',
   connection: 'my-local-postgresql',
 
-  schema: true
-
+  schema: true,
+  // ...
 });
 ```
 
-###### tableName
+#### tableName
 
-You can define a custom table name on your adapter by adding a `tableName` attribute. If no table
+You can define a custom table or collection name on your adapter by adding a `tableName` attribute. If no table
 name is supplied it will use the identity as the table name when passing it to an adapter.
 
 ```javascript
@@ -124,7 +141,7 @@ var Foo = Waterline.Collection.extend({
   identity: 'foo',
   connection: 'my-local-postgresql',
 
-  tableName: 'my-legacy-table-name'
-
+  tableName: 'my-legacy-table-name',
+  // ...
 });
 ```
