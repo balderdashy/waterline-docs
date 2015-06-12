@@ -95,6 +95,8 @@ var Foo = Waterline.Collection.extend({
 });
 ```
 
+Note that if this flag is set and the `createdAt` property is supplied on create that value will be used to create the record in the data store.
+
 #### autoUpdatedAt
 
 A flag to toggle the automatic timestamp for updatedAt. Default: `true`.
@@ -109,6 +111,8 @@ var Foo = Waterline.Collection.extend({
   // ...
 });
 ```
+
+Note that if this flag is set and the `updatedAt` property is supplied on update, that value will be used to create the record in the data store.
 
 #### schema
 
