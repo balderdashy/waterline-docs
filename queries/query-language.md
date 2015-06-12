@@ -1,4 +1,4 @@
-## Query Language
+# Query Language
 
 The Waterline Query language is an object based criteria used to retrive the records from any of
 the supported database adapters. This means that you can use the same query on MySQL as you do on
@@ -8,7 +8,7 @@ All queries inside of Waterline are case insensitive. This allows for easier que
 indexing strings tough. This is something to be aware of if you are indexing and searching on string
 fields.
 
-### Query Language Basics
+## Query Language Basics
 
 The criteria objects are formed using one of four types of object keys. These are the top level
 keys used in a query object. It is loosely based on the criteria used in MongoDB with a few slight
@@ -26,7 +26,7 @@ Model.find({ where: { name: 'foo' }, skip: 20, limit: 10, sort: 'name DESC' });
 Model.find({ name: 'foo' })
 ```
 
-#### Key Pairs
+### Key Pairs
 
 A key pair can be used to search records for values matching exactly what is specified. This is the
 base of a criteria object where the key represents an attribute on a model and the value is a strict
@@ -42,7 +42,7 @@ They can be used together to search multiple attributes.
 Model.find({ name: 'walter', state: 'new mexico' })
 ```
 
-#### Modified Pairs
+### Modified Pairs
 
 Modified pairs also have model attributes for keys but they also use any of the supported criteria
 modifiers to perform queries where a strict equality check wouldn't work.
@@ -55,7 +55,7 @@ Model.find({
 })
 ```
 
-#### In Pairs
+### In Pairs
 
 IN queries work similarly to mysql 'in queries'. Each element in the array is treated as 'or'.
 
@@ -65,7 +65,7 @@ Model.find({
 });
 ```
 
-#### Not-In Pairs
+### Not-In Pairs
 
 Not-In queries work similar to `in` queries, except for the nested object criteria.
 
@@ -75,7 +75,7 @@ Model.find({
 });
 ```
 
-#### Or Pairs
+### Or Pairs
 
 Performing `OR` queries is done by using an array of query pairs. Results will be returned that
 match any of the criteria objects inside the array.
@@ -89,7 +89,7 @@ Model.find({
 })
 ```
 
-### Criteria Modifiers
+## Criteria Modifiers
 
 The following modifiers are available to use when building queries.
 
@@ -104,7 +104,7 @@ The following modifiers are available to use when building queries.
 * `'endsWith'`
 
 
-#### '<' / 'lessThan'
+### '<' / 'lessThan'
 
 Searches for records where the value is less than the value specified.
 
@@ -112,7 +112,7 @@ Searches for records where the value is less than the value specified.
 Model.find({ age: { '<': 30 }})
 ```
 
-#### '<=' / 'lessThanOrEqual'
+### '<=' / 'lessThanOrEqual'
 
 Searches for records where the value is less or equal to the value specified.
 
@@ -120,7 +120,7 @@ Searches for records where the value is less or equal to the value specified.
 Model.find({ age: { '<=': 21 }})
 ```
 
-#### '>' / 'greaterThan'
+### '>' / 'greaterThan'
 
 Searches for records where the value is more than the value specified.
 
@@ -128,7 +128,7 @@ Searches for records where the value is more than the value specified.
 Model.find({ age: { '>': 18 }})
 ```
 
-#### '>=' / 'greaterThanOrEqual'
+### '>=' / 'greaterThanOrEqual'
 
 Searches for records where the value is more or equal to the value specified.
 
@@ -136,7 +136,7 @@ Searches for records where the value is more or equal to the value specified.
 Model.find({ age: { '>=': 21 }})
 ```
 
-#### '!' / 'not'
+### '!' / 'not'
 
 Searches for records where the value is not equal to the value specified.
 
@@ -144,7 +144,7 @@ Searches for records where the value is not equal to the value specified.
 Model.find({ name: { '!': 'foo' }})
 ```
 
-#### 'like'
+### 'like'
 
 Searches for records using pattern matching with the `%` sign.
 
@@ -152,7 +152,7 @@ Searches for records using pattern matching with the `%` sign.
 Model.find({ food: { 'like': '%beans' }})
 ```
 
-#### 'contains'
+### 'contains'
 
 A shorthand for pattern matching both sides of a string. Will return records where the value
 contains the string anywhere inside of it.
@@ -165,7 +165,7 @@ Model.find({ class: { 'contains': 'history' }})
 Model.find({ class: { 'like': '%history%' }})
 ```
 
-#### 'startsWith'
+### 'startsWith'
 
 A shorthand for pattern matching the right side of a string. Will return records where the value
 starts with the supplied string value.
@@ -178,7 +178,7 @@ Model.find({ class: { 'startsWith': 'american' }})
 Model.find({ class: { 'like': 'american%' }})
 ```
 
-#### 'endsWith'
+### 'endsWith'
 
 A shorthand for pattern matching the left side of a string. Will return records where the value
 ends with the supplied string value.
@@ -191,7 +191,7 @@ Model.find({ class: { 'endsWith': 'can' }})
 Model.find({ class: { 'like': '%can' }})
 ```
 
-#### 'Date Ranges'
+### 'Date Ranges'
 
 You can do date range queries using the comparison operators.
 
@@ -199,7 +199,7 @@ You can do date range queries using the comparison operators.
 Model.find({ date: { '>': new Date('2/4/2014'), '<': new Date('2/7/2014') } })
 ```
 
-### Query Options
+## Query Options
 
 Query options allow you refine the results that are returned from a query. The current options
 available are:
@@ -209,7 +209,7 @@ available are:
 * `sort`
 * `select`
 
-#### Limit
+### Limit
 
 Limits the number of results returned from a query.
 
@@ -217,7 +217,7 @@ Limits the number of results returned from a query.
 Model.find({ where: { name: 'foo' }, limit: 20 })
 ```
 
-#### Skip
+### Skip
 
 Returns all the results excluding the number of items to skip.
 
@@ -225,7 +225,7 @@ Returns all the results excluding the number of items to skip.
 Model.find({ where: { name: 'foo' }, skip: 10 });
 ```
 
-##### Pagination
+### Pagination
 
 `skip` and `limit` can be used together to build up a pagination system.
 
@@ -233,7 +233,7 @@ Model.find({ where: { name: 'foo' }, skip: 10 });
 Model.find({ where: { name: 'foo' }, limit: 10, skip: 10 });
 ```
 
-#### Sort
+### Sort
 
 Results can be sorted by attribute name. Simply specify an attribute name for natural (ascending)
 sort, or specify an `asc` or `desc` flag for ascending or descending orders respectively.
@@ -255,7 +255,7 @@ Model.find({ where: { name: 'foo' }, sort: { 'name': 1 }});
 Model.find({ where: { name: 'foo' }, sort: { name:  1, age: 0 });
 ```
 
-#### Select
+### Select
 
 Apply a projection to a waterline query.
 

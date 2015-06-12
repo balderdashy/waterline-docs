@@ -1,22 +1,34 @@
-Waterline v0.10 Documentation
-====================================
-
-Waterline provides an abstraction layer on top of your data-store, giving you easy access to query
-and manipulate your data. It's an ORM (Object-Relational-Mapper) which is datastore agnostic using
-adapters to communicate with your favorite data-store.
-
-It is written entirely in Javascript and runs on Node.js.
+# Waterline v0.10 Documentation
 
 ## Table of Contents
 
-* [Models](models.md)
-* [Queries](query.md)
-  * [Query Language](query-language.md)
-  * [Query Methods](query-methods.md)
-* [Associations](associations.md)
-* [Adapters](adapters.md)
+* [Introduction](introduction/introduction.md)
+  * [Installation](introduction/installation.md)
+  * [Getting Started](introduction/getting-started.md)
+* [Models](models/models.md)
+  * [Data types & attribute properties](models/data-types-attributes.md)
+  * [Validations](models/validations.md)
+  * [Lifecycle Callbacks](models/lifecycle-callbacks.md)
+  * [Associations](models/associations/associations.md)
+    - [One-to-one](models/associations/one-to-one.md)
+    - [One-to-many](models/associations/one-to-many.md)
+    - [Many-to-many](models/associations/many-to-many.md)
+    - [Many-to-many through](models/associations/many-to-many-through.md)
+    - [Dominance](models/associations/dominance.md)
+  * [Instance & Class Methods](models/instance-class-methods.md)
+  * [Configuration](models/configuration.md)
+* [Queries](queries/query.md)
+  * [Query Language](queries/query-language.md)
+  * [Query Methods](queries/query-methods.md)
+* [Adapters](adapters/adapters.md)
+* [Testing](testing/testing.md)
+* [Integration](integration/integration.md)
+  * [Sails](integration/sails.md)
+* [Examples](examples/examples.md)
+* [Roadmap](ROADMAP.md)
+* [Contributing](CONTRIBUTING.md)
 
-### Supported Adapters
+## Supported Adapters
 
 |    Name                                                                         | Maintainer                                   | Build Status (edge)                                                                                                                         | Latest Stable Version                                                                                     |
 |---------------------------------------------------------------------------------|----------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------|
@@ -27,7 +39,7 @@ It is written entirely in Javascript and runs on Node.js.
 | [Sails-Disk](https://github.com/balderdashy/sails-disk)                         | [balderdash](https://github.com/balderdashy) | [![Build Status](https://travis-ci.org/balderdashy/sails-disk.svg?branch=master)](https://travis-ci.org/balderdashy/sails-disk)             | [![npm version](https://badge.fury.io/js/sails-disk.svg)](http://badge.fury.io/js/sails-disk) 
 | [Sails-Memory](https://github.com/balderdashy/sails-memory)                     | [balderdash](https://github.com/balderdashy) | [![Build Status](https://travis-ci.org/balderdashy/sails-memory.svg?branch=master)](https://travis-ci.org/balderdashy/sails-memory)         | [![npm version](https://badge.fury.io/js/sails-memory.svg)](http://badge.fury.io/js/sails-memory) 
 
-### Community Adapters
+## Community Adapters
 
 |    Name                                                                         | Maintainer                                   | Build Status (edge)                                                                                                                         | Latest Stable Version                                                                                     |
 |---------------------------------------------------------------------------------|----------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------|
@@ -40,7 +52,7 @@ It is written entirely in Javascript and runs on Node.js.
 If you have an adapter you would like added, submit a PR and add it to the list.
 
 
-### Core modules
+## Core modules
 
 | Repo          |  Build Status (edge)                  |  Latest Stable Version   |
 |---------------|---------------------------------------|--------------------------|
@@ -55,7 +67,3 @@ If you have an adapter you would like added, submit a PR and add it to the list.
 |-------------------|--------|
 | Edge waterline core <-> edge official adapters | [![Build Status](https://travis-ci.org/balderdashy/waterline-adapter-tests.svg?branch=master)](https://travis-ci.org/balderdashy/waterline-adapter-tests) |
 
-##### Contributing to the docs
-
-> We welcome your help! Please send a pull request to this branch with corrections/additions and
-they'll be double-checked and merged as soon as possible.

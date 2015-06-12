@@ -1,15 +1,11 @@
-Adapters
-=========
+# Creating Adapters for Waterline
 
 Adapters are the *glue* connecting waterline core to the different data stores. Adapters expose 
 [interfaces](https://github.com/balderdashy/sails-docs/blob/master/contributing/adapter-specification.md), which imply a 
 contract to implement certain functionality. This allows us to guarantee conventional usage patterns across multiple models, 
 developers, apps, and even companies, making app code more maintainable, efficient, and reliable.
 
-
-## Creating an adapter
-
-### Before writing code
+## Before writing code
 
 Waterline github page doesn't list an adapter for a particular datastore and you think it would be a good idea to create one, 
 good stuff! But before you start we recommend you [search github](https://github.com/search) for `sails-datastorename` and `waterline-datastorename`
@@ -18,7 +14,7 @@ your contribute instead of starting a new project. Most developers will welcome 
 result in a better quality adapter. If one doesn't exist we recommend you create a new project and name it following the 
 convention: `sails-datastorename`.
 
-### How to start
+## How to start
 
 The best way to start is to use [sails-generate-adapter](https://github.com/balderdashy/sails-generate-adapter) to generate all 
 the boilerplate code. Alternatively you can fork [sails-adapter-boilerplate](https://github.com/balderdashy/sails-adapter-boilerplate)
@@ -27,13 +23,13 @@ but this project is no longer maintained.
 Within the generated template file [adapter.js](https://github.com/balderdashy/sails-generate-adapter/blob/master/templates/boilerplate/adapter.js)
 are inline comments explaining what each method does and what is expected to return.
 
-### Going beyond `find`, `update`, `create` and `destroy`
+## Going beyond `find`, `update`, `create` and `destroy`
 
 These are the main methods to support the `Semantic` interface, yet there are a few more interfaces you can implement for
 additional functionality and performance. For a comprehensive list check 
 [Adapter Interface Reference](https://github.com/balderdashy/sails-docs/blob/master/contributing/adapter-specification.md).
 
-### Testing
+## Testing
 
 Waterline provides an integration test suite named 
 [waterline-adapter-tests](https://github.com/balderdashy/waterline-adapter-tests) that can be used to test any adapter. 

@@ -1,4 +1,4 @@
-## Query Interface
+# Waterline Query Interface
 
 The Waterline Query Interface allows you to interact with your models the same way no matter which
 adapter they are using. This means you can use the same query language whether your data lives in
@@ -16,7 +16,7 @@ The Query Interface exposes the following methods:
 
 See [Query Methods](query-methods.md) for more information on their use.
 
-### Query Language
+## Query Language
 
 Waterline exposes a normalized language for finding records no matter which data store the records
 live in. The following options are available on all `find` and `findOne` queries.
@@ -59,7 +59,7 @@ User.findOne()
 });
 ```
 
-##### .where()
+### .where()
 
 `where` is the primary criteria for your query. Here you specify what you would like to search for
 using any of the supported [Query Language](query-language.md).
@@ -75,7 +75,7 @@ User.find()
 .exec(function(err, results) {});
 ```
 
-##### .populate()
+### .populate()
 
 `populate` is used with associations to include any related values specified in a model definition.
 If a `collection` attribute is defined in a many-to-many, one-to-many or many-to-many-through
@@ -101,7 +101,7 @@ User.find()
 .exec(function(err, users) {});
 ```
 
-##### .limit()
+### .limit()
 
 `limit` will restrict the number of records returned by the query.
 
@@ -115,7 +115,7 @@ User.find()
 .exec(function(err, users) {});
 ```
 
-##### .skip()
+### .skip()
 
 `skip` will skip over n results when returning the results.
 
@@ -129,7 +129,7 @@ User.find()
 .exec(function(err, users) {});
 ```
 
-##### .paginate()
+### .paginate()
 
 When `skip` and `limit` are put together they create the ability to paginate through records as you
 would pages. For example, if I wanted 'page 2' of a given record set, and I only want to see 10
@@ -158,7 +158,7 @@ Paginate has several options:
 * `paginate({limit: 20})` uses `{ page: 0, limit: 20 }` as the options
 * `paginate({page: 1, limit: 20})` uses `{ page: 1, limit: 20 }` as the options
 
-##### .sort()
+### .sort()
 
 `sort` will return a sorted set of values. Simply specify an attribute name for natural (ascending)
 sort, or specify an `asc` or `desc` flag for ascending or descending orders respectively.
@@ -170,7 +170,7 @@ User.find()
 .exec(function(err, users) {});
 ```
 
-##### .exec()
+### .exec()
 
 `exec` will run the query and return the results to the supplied callback. It should be the last
 method in the chain.
