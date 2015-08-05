@@ -60,7 +60,7 @@ var User = Waterline.Collection.extend({
 "Class" methods are functions available at the top level of a model. They can be called anytime after
 a Waterline instance has been initialized.
 
-These are useful if you would like to keep model logic in the model and have reusuable functions
+These are useful if you would like to keep model logic in the model and have reusable functions
 available.
 
 ```javascript

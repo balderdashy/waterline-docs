@@ -101,7 +101,7 @@ Pet.create({
 This will create a new `Pet` record with the `User` foreignKey set. It will allow you to query a `Pet`
 and also retrieve their owners but the `User` side of the association doesn't know about the `Pet`.
 To ensure you can query both ways the `User` record will need to be updated with the new `Pet` record.
-You can do this many ways but a simple nested example may look like this:
+You can do this in many ways but a simple nested example may look like this:
 
 ```javascript
 Pet.create({

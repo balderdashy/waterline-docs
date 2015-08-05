@@ -99,8 +99,8 @@ User.findOrCreate({ name: 'Walter Jr' })
 
 ##### Notes
 > Any string arguments passed must be the ID of the record.
-> This method can return a single record or an Array of records
-> If model not found and creation values are ommitted, it will get created with the supplied criteria values
+> This method can return a single record or an array of records.
+> If a model is not found and creation values are ommitted, it will get created with the supplied criteria values.
 >
 > **Warning**
 >
@@ -149,19 +149,19 @@ User.destroy({ name: 'Flynn' })
 ```
 
 ##### Notes
-> If you want to confirm the record exists before you delete it, you must first perform a find()
+> If you want to confirm the record exists before you delete it, you must first perform a find().
 > Any string arguments passed must be the ID of the record.
 
 
 
 ### .query( `query`, `[data]`, `callback` )
 
-Some adapters, such as [sails-mysql](https://github.com/balderdashy/sails-mysql) and [sails-postgresql](https://github.com/balderdashy/sails-postgresql), support the `query` function which will run the proved RAW query against the database. This can sometimes be useful if you want to run complex queries and performance is very important.
+Some adapters, such as [sails-mysql](https://github.com/balderdashy/sails-mysql) and [sails-postgresql](https://github.com/balderdashy/sails-postgresql), support the `query` function which will run the provided RAW query against the database. This can sometimes be useful if you want to run complex queries and performance is very important.
 
 |    Description     | Accepted Data Types             | Required ? |
 |--------------------|---------------------------------|------------|
-|     query          |   `string`                      |   Yes      |
-|     data           |   `array`                       |   No       |
+|     Query          |   `string`                      |   Yes      |
+|     Data           |   `array`                       |   No       |
 |     Callback       |   `function`                    |   Yes      |
 
 ```javascript
