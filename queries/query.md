@@ -79,7 +79,7 @@ User.find()
 
 `populate` is used with associations to include any related values specified in a model definition.
 If a `collection` attribute is defined in a many-to-many, one-to-many or many-to-many-through
-association is defined the `populate` option also accepts a full criteria object. This allows you
+association the `populate` option also accepts a full criteria object. This allows you
 to filter associations and run `limit` and `skip` on the results.
 
 |     Description     | Accepted Data Types | Required ? |
@@ -132,7 +132,7 @@ User.find()
 ### .paginate()
 
 When `skip` and `limit` are put together they create the ability to paginate through records as you
-would pages. For example, if I wanted 'page 2' of a given record set, and I only want to see 10
+would for pages. For example, if I wanted 'page 2' of a given record set, and I only want to see 10
 records at a time, I know that I need to `skip(10)` and `limit(10)` like so:
 
 ```javascript
@@ -153,10 +153,10 @@ User.find()
 
 Paginate has several options:
 
-* `paginate()` defaults options to `{ page: 0, limit: 10 }`
-* `paginate({page: 2})` uses `{ page: 2, limit: 10 }` as the options
-* `paginate({limit: 20})` uses `{ page: 0, limit: 20 }` as the options
-* `paginate({page: 1, limit: 20})` uses `{ page: 1, limit: 20 }` as the options
+* `paginate()` defaults options to `{ page: 0, limit: 10 }`.
+* `paginate({page: 2})` uses `{ page: 2, limit: 10 }` as the options.
+* `paginate({limit: 20})` uses `{ page: 0, limit: 20 }` as the options.
+* `paginate({page: 1, limit: 20})` uses `{ page: 1, limit: 20 }` as the options.
 
 ### .sort()
 

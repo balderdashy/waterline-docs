@@ -18,7 +18,7 @@ var sailsMemoryAdapter = require('sails-memory');
 var waterline = new Waterline();
 ```
 
-Here we are simply bootstrapping our main objects. We setting up the `Waterline` factory object, and instance of an adapter and an instance of `waterline` itself.
+Here we are simply bootstrapping our main objects. We are setting up the `Waterline` factory object, and instance of an adapter and an instance of `waterline` itself.
 
 Next, we define the specification for the user model, like so:
 
@@ -39,7 +39,7 @@ var userCollection = Waterline.Collection.extend({
 });
 ```
 
-What's important here is the object are passing into that factory method.
+What's important here is the object that we are passing into that factory method.
 
 We need to give our model an `identity` that we can refer to later, and also declare which connection we are going to use.
 
@@ -70,7 +70,7 @@ var petCollection = Waterline.Collection.extend({
 
 Most of the structure is same as for the user. However, the `owner` field specifies the owner of this pet.
 
-> In this case, a pet can only one owner, so we define which model it is associated with. The name of the model needs to marry to the `identity` you give the model. Also in this case, in a relational database this will create a column called `owner` that will contain a foreign key back to the `user` table.
+> In this case, a pet can only have one owner, so we define which model it is associated with. The name of the model needs to marry to the `identity` you give the model. Also in this case, in a relational database this will create a column called `owner` that will contain a foreign key back to the `user` table.
 
 Next we have some more boring setup chores.
 
@@ -150,7 +150,7 @@ We will use some Promise goodness to create a user and a pet and see what we can
 
 First, we use the `create` method to create a new user. We just need to supply the attibutes for our user, and we'll get back a copy of the record that was created.
 
-> Note that by default, Waterline adds an `id` primary key for you, unless specifically tell it not to.
+> Note that by default, Waterline adds an `id` primary key for you, unless you specifically tell it not to.
 
 Next we create a new pet, but we can use the `id` of the user that was created in the previous step to associate with the pet. We do this by setting the `owner` field directly.
 
@@ -158,7 +158,7 @@ Once the pet is created we have both sides of the association ready. To join the
 
 > Note that `save` is only available on the model objects returned by the query. Our `User` collection object does not have access to this.
 
-Finally, we want to see what actually got stuffed into the database, so we use `User.find` to get all the `User` records out of the datastore. We also want the query to resolve the pet association so we also all the `populate` method to tell the query to go find the pet record for each user.
+Finally, we want to see what actually got stuffed into the database, so we use `User.find` to get all the `User` records out of the datastore. We also want the query to resolve the pet association so we add the `populate` method to tell the query to go find the pet records for each user.
 
 Running that simple application gives us:
 
