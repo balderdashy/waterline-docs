@@ -115,26 +115,20 @@ waterline.initialize(config, function (err, ontology) {
 	User.create({
 			firstName: 'Neil',
 			lastName: 'Armstrong'
-		})
-		.then(function (user) {
-			Pet.create({
+		}).then(function (user) {
+			return Pet.create({
 				breed: 'beagle',
 				type: 'dog',
 				name: 'Astro',
 				owner: user.id
-			})
-				.then(function (pet) {
-					user.pets = [pet];
-
-					return user.save();
-				})
-				.then(function () {
-					return User.find()
-						.populate('pets');
-				})
-				.then(console.log)
-				.catch(console.error);
-		});
+			});
+			
+		}).then(function () {
+			return User.find()
+				.populate('pets');
+				
+		}).then(console.log.bind(console))
+		.catch(console.error.bind(console));
 });
 ```
 
