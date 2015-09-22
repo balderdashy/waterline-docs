@@ -111,24 +111,26 @@ waterline.initialize(config, function (err, ontology) {
 	var User = ontology.collections.user;
 	var Pet = ontology.collections.pet;
 
-	// First we create a user.
-	User.create({
-			firstName: 'Neil',
-			lastName: 'Armstrong'
-		}).then(function (user) {
-			return Pet.create({
-				breed: 'beagle',
-				type: 'dog',
-				name: 'Astro',
-				owner: user.id
-			});
-			
-		}).then(function () {
-			return User.find()
-				.populate('pets');
-				
-		}).then(console.log.bind(console))
-		.catch(console.error.bind(console));
+    User.create({ // First we create a user.
+            firstName: 'Neil',
+            lastName: 'Armstrong'
+        }).then(function (user) { // Then we create the pet
+            return Pet.create({
+                breed: 'beagle',
+                type: 'dog',
+                name: 'Astro',
+                owner: user.id
+            });
+
+        }).then(function (pet) { // Then we grab all users and their pets
+            return User.find().populate('pets');
+
+        }).then(function(users){ // Results of the previous then clause are passed to the next
+             console.dir(users);
+
+        }).catch(function(err){ // If any errors occur execution jumps to the catch block.
+			console.error(err);
+		});
 });
 ```
 
