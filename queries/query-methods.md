@@ -181,15 +181,19 @@ Movie.query('SELECT * FROM movie WHERE title = $1', [title], function(err, resul
 
 ## Aggregates
 
-For sql based adapters such as [sails-mysql](https://github.com/balderdashy/sails-mysql) and [sails-postgresql](https://github.com/balderdashy/sails-postgresql) aggregates are supported through specific methods to handle grouping and aggregation. Currently `groupBy` for grouping and `max`, `min`, `sum`, and `average` for aggregation are supported. If `groupBy` is used then at least one aggregate must be specified as well.
+Some adapters (including [sails-mysql](https://github.com/balderdashy/sails-mysql) and 
+[sails-postgresql](https://github.com/balderdashy/sails-postgresql)) support aggregate queries 
+using specific grouping and aggregation methods. Currently `groupBy` for grouping and `max`, `min`, 
+`sum`, and `average` for aggregation are supported. For SQL based adapters if `groupBy` is used then at least one 
+aggregate must be specified as well, and only the aggregated and grouped attributes will be returned in the results.
 
-### .groupBy( `column` or `expression` )
+### .groupBy( `attribute` or `expression` )
 
-`groupBy` will use a `GROUP BY` statement to group results by the specified column or expression.
+`groupBy` will group results by the specified attribute or expression (for SQL adapters that support expressions).
 
-|    Description     | Accepted Data Types             | Required ? |
-|--------------------|---------------------------------|------------|
-|Column or Expression|   `string`                      |   Yes      |
+|    Description        | Accepted Data Types             | Required ? |
+|-----------------------|---------------------------------|------------|
+|Attribute or Expression|   `string`                      |   Yes      |
 
 ```javascript
 // Find the highest grossing movie by genre.
@@ -215,17 +219,20 @@ Movie.find()
 ```
 
 ##### Notes
-> Along with columns the `groupBy` method accepts any sql expression, since we don't have a column
-> to serve as a natural key for the expression any expressions will be keyed with `group0` where
-> 0 is the index of `groupBy` method containing the expression.
+> As specified by the [Waterline SQL Interface](https://github.com/balderdashy/waterline-adapter-tests/tree/master/interfaces/sql),
+> along with attributes SQL expressions are accepted by the `groupBy` method. This allows
+> you to create queries that group by month or year on a datetime field. Since expressions don't provide
+> an attribute to serve as a key in the returned results the `groupBy` method will key each grouped
+> attribute with `group0` where `0` is the index of the `groupBy` method call containing the
+> expression.
 
-### .max( `column` )
+### .max( `attribute` )
 
-`max` will use the `MAX` function to find the maximum value of a column.
+`max` will find the maximum value for the given attribute.
 
 |    Description     | Accepted Data Types             | Required ? |
 |--------------------|---------------------------------|------------|
-|       Column       |   `string`                      |   Yes      |
+|   Attribute        |   `string`                      |   Yes      |
 
 ```javascript
 // Find the highest grossing movie by genre.
@@ -238,13 +245,13 @@ Movie.find()
 	});
 ```
 
-### .min( `column` )
+### .min( `attribute` )
 
-`min` will use the `MIN` function to find the minimum value of a column.
+`min` will find the minimum value for the given attribute.
 
 |    Description     | Accepted Data Types             | Required ? |
 |--------------------|---------------------------------|------------|
-|       Column       |   `string`                      |   Yes      |
+|   Attribute        |   `string`                      |   Yes      |
 
 ```javascript
 // Find the lowest grossing movie by genre.
@@ -257,13 +264,13 @@ Movie.find()
 	});
 ```
 
-### .sum( `column` )
+### .sum( `attribute` )
 
-`sum` will use the `SUM` function to find the total value of a column.
+`sum` will find the summed total for the given attribute.
 
 |    Description     | Accepted Data Types             | Required ? |
 |--------------------|---------------------------------|------------|
-|       Column       |   `string`                      |   Yes      |
+|   Attribute        |   `string`                      |   Yes      |
 
 ```javascript
 // Find the movie revenue by genre.
@@ -276,13 +283,13 @@ Movie.find()
 	});
 ```
 
-### .average( `column` )
+### .average( `attribute` )
 
-`average` will use the `AVG` function to find the average value of a column.
+`average` will find the average value for the given attribute.
 
 |    Description     | Accepted Data Types             | Required ? |
 |--------------------|---------------------------------|------------|
-|       Column       |   `string`                      |   Yes      |
+|   Attribute        |   `string`                      |   Yes      |
 
 ```javascript
 // Find the average movie revenue by genre.
