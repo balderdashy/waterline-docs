@@ -181,4 +181,120 @@ Movie.query('SELECT * FROM movie WHERE title = $1', [title], function(err, resul
 
 ## Aggregates
 
-** To-DO **
+For sql based adapters such as [sails-mysql](https://github.com/balderdashy/sails-mysql) and [sails-postgresql](https://github.com/balderdashy/sails-postgresql) aggregates are supported through specific methods to handle grouping and aggregation. Currently `groupBy` for grouping and `max`, `min`, `sum`, and `average` for aggregation are supported. If `groupBy` is used then at least one aggregate must be specified as well.
+
+### .groupBy( `column` or `expression` )
+
+`groupBy` will use a `GROUP BY` statement to group results by the specified column or expression.
+
+|    Description     | Accepted Data Types             | Required ? |
+|--------------------|---------------------------------|------------|
+|Column or Expression|   `string`                      |   Yes      |
+
+```javascript
+// Find the highest grossing movie by genre.
+Movie.find()
+	.groupBy('genre')
+	.max('revenue')
+	.then(function(results) {
+		// Max revenue for the first genre.
+		results[0].revenue;
+	});
+
+// Find the highest grossing movie by year.
+Movie.find()
+	.groupBy('to_char("movie"."releaseDate", \'YYYY\')')
+	.max('revenue')
+	.then(function(results) {
+		// Max revenue for the first year.
+		results[0].revenue;
+
+		// The first year.
+		results[0].group0
+	});
+```
+
+##### Notes
+> Along with columns the `groupBy` method accepts any sql expression, since we don't have a column
+> to serve as a natural key for the expression any expressions will be keyed with `group0` where
+> 0 is the index of `groupBy` method containing the expression.
+
+### .max( `column` )
+
+`max` will use the `MAX` function to find the maximum value of a column.
+
+|    Description     | Accepted Data Types             | Required ? |
+|--------------------|---------------------------------|------------|
+|       Column       |   `string`                      |   Yes      |
+
+```javascript
+// Find the highest grossing movie by genre.
+Movie.find()
+	.groupBy('genre')
+	.max('revenue')
+	.then(function(results) {
+		// Max revenue for the first genre.
+		results[0].revenue;
+	});
+```
+
+### .min( `column` )
+
+`min` will use the `MIN` function to find the minimum value of a column.
+
+|    Description     | Accepted Data Types             | Required ? |
+|--------------------|---------------------------------|------------|
+|       Column       |   `string`                      |   Yes      |
+
+```javascript
+// Find the lowest grossing movie by genre.
+Movie.find()
+	.groupBy('genre')
+	.min('revenue')
+	.then(function(results) {
+		// Min revenue for the first genre.
+		results[0].revenue;
+	});
+```
+
+### .sum( `column` )
+
+`sum` will use the `SUM` function to find the total value of a column.
+
+|    Description     | Accepted Data Types             | Required ? |
+|--------------------|---------------------------------|------------|
+|       Column       |   `string`                      |   Yes      |
+
+```javascript
+// Find the movie revenue by genre.
+Movie.find()
+	.groupBy('genre')
+	.sum('revenue')
+	.then(function(results) {
+		// Total revenue for the first genre.
+		results[0].revenue;
+	});
+```
+
+### .average( `column` )
+
+`average` will use the `AVG` function to find the average value of a column.
+
+|    Description     | Accepted Data Types             | Required ? |
+|--------------------|---------------------------------|------------|
+|       Column       |   `string`                      |   Yes      |
+
+```javascript
+// Find the average movie revenue by genre.
+Movie.find()
+	.groupBy('genre')
+	.average('revenue')
+	.then(function(results) {
+		// Average revenue for the first genre.
+		results[0].revenue;
+	});
+```
+
+
+
+
