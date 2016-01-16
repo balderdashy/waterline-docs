@@ -181,4 +181,127 @@ Movie.query('SELECT * FROM movie WHERE title = $1', [title], function(err, resul
 
 ## Aggregates
 
-** To-DO **
+Some adapters (including [sails-mysql](https://github.com/balderdashy/sails-mysql) and 
+[sails-postgresql](https://github.com/balderdashy/sails-postgresql)) support aggregate queries 
+using specific grouping and aggregation methods. Currently `groupBy` for grouping and `max`, `min`, 
+`sum`, and `average` for aggregation are supported. For SQL based adapters if `groupBy` is used then at least one 
+aggregate must be specified as well, and only the aggregated and grouped attributes will be returned in the results.
+
+### .groupBy( `attribute` or `expression` )
+
+`groupBy` will group results by the specified attribute or expression (for SQL adapters that support expressions).
+
+|    Description        | Accepted Data Types             | Required ? |
+|-----------------------|---------------------------------|------------|
+|Attribute or Expression|   `string`                      |   Yes      |
+
+```javascript
+// Find the highest grossing movie by genre.
+Movie.find()
+	.groupBy('genre')
+	.max('revenue')
+	.then(function(results) {
+		// Max revenue for the first genre.
+		results[0].revenue;
+	});
+
+// Find the highest grossing movie by year.
+Movie.find()
+	.groupBy('to_char("movie"."releaseDate", \'YYYY\')')
+	.max('revenue')
+	.then(function(results) {
+		// Max revenue for the first year.
+		results[0].revenue;
+
+		// The first year.
+		results[0].group0
+	});
+```
+
+##### Notes
+> As specified by the [Waterline SQL Interface](https://github.com/balderdashy/waterline-adapter-tests/tree/master/interfaces/sql),
+> along with attributes SQL expressions are accepted by the `groupBy` method. This allows
+> you to create queries that group by month or year on a datetime field. Since expressions don't provide
+> an attribute to serve as a key in the returned results the `groupBy` method will key each grouped
+> attribute with `group0` where `0` is the index of the `groupBy` method call containing the
+> expression.
+
+### .max( `attribute` )
+
+`max` will find the maximum value for the given attribute.
+
+|    Description     | Accepted Data Types             | Required ? |
+|--------------------|---------------------------------|------------|
+|   Attribute        |   `string`                      |   Yes      |
+
+```javascript
+// Find the highest grossing movie by genre.
+Movie.find()
+	.groupBy('genre')
+	.max('revenue')
+	.then(function(results) {
+		// Max revenue for the first genre.
+		results[0].revenue;
+	});
+```
+
+### .min( `attribute` )
+
+`min` will find the minimum value for the given attribute.
+
+|    Description     | Accepted Data Types             | Required ? |
+|--------------------|---------------------------------|------------|
+|   Attribute        |   `string`                      |   Yes      |
+
+```javascript
+// Find the lowest grossing movie by genre.
+Movie.find()
+	.groupBy('genre')
+	.min('revenue')
+	.then(function(results) {
+		// Min revenue for the first genre.
+		results[0].revenue;
+	});
+```
+
+### .sum( `attribute` )
+
+`sum` will find the summed total for the given attribute.
+
+|    Description     | Accepted Data Types             | Required ? |
+|--------------------|---------------------------------|------------|
+|   Attribute        |   `string`                      |   Yes      |
+
+```javascript
+// Find the movie revenue by genre.
+Movie.find()
+	.groupBy('genre')
+	.sum('revenue')
+	.then(function(results) {
+		// Total revenue for the first genre.
+		results[0].revenue;
+	});
+```
+
+### .average( `attribute` )
+
+`average` will find the average value for the given attribute.
+
+|    Description     | Accepted Data Types             | Required ? |
+|--------------------|---------------------------------|------------|
+|   Attribute        |   `string`                      |   Yes      |
+
+```javascript
+// Find the average movie revenue by genre.
+Movie.find()
+	.groupBy('genre')
+	.average('revenue')
+	.then(function(results) {
+		// Average revenue for the first genre.
+		results[0].revenue;
+	});
+```
+
+
+
+
