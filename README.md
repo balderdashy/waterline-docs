@@ -48,6 +48,7 @@
 | [Sails-REST](https://github.com/zohararad/sails-rest)                           | [zohararad](https://github.com/zohararad)    |||
 | [Sails-Oracle](https://github.com/atiertant/sails-oracle)                       | [atiertant](https://github.com/atiertant)    |||
 | [Sails-Cassandra](https://github.com/dtoubelis/sails-cassandra)                 | [dtoubelis](https://github.com/dtoubelis)    | [![Build Status](https://travis-ci.org/dtoubelis/sails-cassandra.svg?branch=master)](https://travis-ci.org/dtoubelis/sails-cassandra) | [![npm version](https://badge.fury.io/js/sails-cassandra.svg)](http://badge.fury.io/js/sails-cassandra) |
+| [Sails-Solr](https://github.com/sajov/sails-solr)                               | [sajov](https://github.com/sajov)            | [![Build Status](https://travis-ci.org/sajov/sails-solr.svg?branch=master)](https://travis-ci.org/sajov/sails-solr)                   | [![npm version](https://badge.fury.io/js/sails-solr.svg)](http://badge.fury.io/js/sails-solr) 
 
 If you have an adapter you would like added, submit a PR and add it to the list.
 
