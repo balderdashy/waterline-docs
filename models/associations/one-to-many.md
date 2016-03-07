@@ -81,7 +81,7 @@ User.find()
   //     breed: 'labrador',
   //     type: 'dog',
   //     name: 'fido',
-  //     user: 123
+  //     owner: 123
   //   }]
   // }]
 });
