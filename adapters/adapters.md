@@ -1,6 +1,6 @@
 # Creating Adapters for Waterline
 
-Adapters are the *glue* connecting waterline core to the different data stores. Adapters expose 
+Adapters are the *glue* connecting waterline core to the different datastores. Adapters expose 
 [interfaces](https://github.com/balderdashy/sails-docs/blob/master/contributing/adapter-specification.md), which imply a 
 contract to implement certain functionality. This allows us to guarantee conventional usage patterns across multiple models, 
 developers, apps, and even companies, making app code more maintainable, efficient, and reliable.
