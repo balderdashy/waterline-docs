@@ -21,7 +21,7 @@ See [Query Methods](query-methods.md) for more information on their use.
 Waterline exposes a normalized language for finding records no matter which datastore the records
 live in. The following options are available on all `find` and `findOne` queries.
 
-Each option will return an instance of the deferred object used to create the query so each option
+Each option will return an instance of the deferred object used to create the query, so options 
 can be chained together to create complex queries.
 
 See [Query Language](query-language.md) for more information on the options available in the
@@ -37,7 +37,7 @@ User.find()
 ```
 
 For convience, promises are supported if you choose to use them. Promises use the [Bluebird library](https://github.com/petkaantonov/bluebird),
-so anything you do after the first then call (or spread, or catch), will be a complete Bluebird promise
+so anything you do after the first `then` call (or `spread`, or `catch`), will be a complete Bluebird promise
 object. Remember, you must end the query somehow (by calling then or one of the other functions)
 in order to complete the database request.
 
@@ -131,7 +131,7 @@ User.find()
 
 ### .paginate()
 
-When `skip` and `limit` are put together they create the ability to paginate through records as you
+When `skip` and `limit` are put together, they create the ability to paginate through records as you
 would for pages. For example, if I wanted 'page 2' of a given record set, and I only want to see 10
 records at a time, I know that I need to `skip(10)` and `limit(10)` like so:
 
