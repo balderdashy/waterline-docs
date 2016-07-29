@@ -7,7 +7,7 @@
 var Waterline = require('waterline');
 var sailsMemoryAdapter = require('sails-memory');
 
-// Create the waterline instance.
+// Create the Waterline instance.
 var waterline = new Waterline();
 
 // Create a specification for a User model.
@@ -42,11 +42,11 @@ var petCollection = Waterline.Collection.extend({
 	}
 });
 
-// Add the models to the waterline instance.
+// Add the models to the Waterline instance.
 waterline.loadCollection(userCollection);
 waterline.loadCollection(petCollection);
 
-// Set up the storage configuration for waterline.
+// Set up the storage configuration for Waterline.
 var config = {
 	adapters: {
 		'memory': sailsMemoryAdapter
@@ -59,7 +59,7 @@ var config = {
 	}
 };
 
-// Initialise the waterline instance.
+// Initialise the Waterline instance.
 waterline.initialize(config, function (err, ontology) {
 	if (err) {
 		return console.error(err);
@@ -76,7 +76,7 @@ waterline.initialize(config, function (err, ontology) {
 		})
 		.then(function (user) {
 			// Then we can create a pet for the user.
-			// Note that waterline automatically adds the `id` primary key to the model.
+			// Note that Waterline automatically adds the `id` primary key to the model.
 			Pet.create({
 				breed: 'beagle',
 				type: 'dog',

@@ -1,5 +1,5 @@
 /**
- * A waterline method showing the use of `toJSON` to remove the password.
+ * A Waterline method showing the use of `toJSON` to remove the password.
  */
 
 module.exports = {
