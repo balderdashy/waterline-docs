@@ -1,23 +1,23 @@
 # Creating Adapters for Waterline
 
-Adapters are the *glue* connecting waterline core to the different datastores. Adapters expose 
+Adapters are the *glue* connecting Waterline core to the different datastores. Adapters expose 
 [interfaces](https://github.com/balderdashy/sails-docs/blob/master/contributing/adapter-specification.md), which imply a 
 contract to implement certain functionality. This allows us to guarantee conventional usage patterns across multiple models, 
 developers, apps, and even companies, making app code more maintainable, efficient, and reliable.
 
 ## Before writing code
 
-Waterline github page doesn't list an adapter for a particular datastore and you think it would be a good idea to create one, 
-good stuff! But before you start we recommend you [search github](https://github.com/search) for `sails-datastorename` and `waterline-datastorename`
-and check if a project doesn't exist already. If it does it's generally a good idea to approach the author of an existing adapter and offer
-your contribute instead of starting a new project. Most developers will welcome your help and the combined efforts will likely
-result in a better quality adapter. If one doesn't exist we recommend you create a new project and name it following the 
+If the Waterline GitHub page doesn't list an adapter for a particular datastore and you think it would be a good idea to create one, 
+good stuff! But before you start we recommend you [search GitHub](https://github.com/search) for `sails-datastorename` and `waterline-datastorename`
+and check if a project already exists. If it does, it's generally a good idea to approach the author of an existing adapter and offer
+to contribute instead of starting a new project. Most developers will welcome your help and the combined efforts will likely
+result in a better quality adapter. If one doesn't exist, we recommend you create a new project and name it following the 
 convention: `sails-datastorename`.
 
 ## How to start
 
 The best way to start is to use [sails-generate-adapter](https://github.com/balderdashy/sails-generate-adapter) to generate all 
-the boilerplate code. Alternatively you can fork [sails-adapter-boilerplate](https://github.com/balderdashy/sails-adapter-boilerplate)
+the boilerplate code. Alternatively you can fork [sails-adapter-boilerplate](https://github.com/balderdashy/sails-adapter-boilerplate),
 but this project is no longer maintained.
 
 Within the generated template file [adapter.js](https://github.com/balderdashy/sails-generate-adapter/blob/master/templates/boilerplate/adapter.js)
