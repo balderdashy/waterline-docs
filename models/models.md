@@ -1,7 +1,7 @@
 # Waterline Models
 
 Models represent a structure of data which requires persistent storage. The data may live in any
-data-store but is interfaced in the same way. This allows your users to live in PostgreSQL and your
+datastore but is interfaced in the same way. This allows your users to live in PostgreSQL and your
 user preferences to live in MongoDB and you will interact with the data models in the exact same way.
 
 If you're using MySQL, a model might correspond to a table. If you're using MongoDB, it might
@@ -88,7 +88,7 @@ var Person = Waterline.Collection.extend({
       defaultsTo: '111-222-3333'
     },
 
-    // Create an auto-incrementing value (not supported by all data-stores)
+    // Create an auto-incrementing value (not supported by all datastores)
     incrementMe: {
       type: 'integer',
       autoIncrement: true
@@ -104,7 +104,7 @@ var Person = Waterline.Collection.extend({
 ```
 
 ## Using an existing database
-  
+
 There might be times when you want to use an existing database in your models.
 
 It is **extremely important** to set the `migrate` property to `safe` in your models when working with existing databases. If you do not to this, you will very likely **lose data** and do other terrible things as it tries to automatically adjust the schema.
@@ -152,4 +152,3 @@ Property | Value | Default | Description
 `autoPK` | `boolean` | `true` | Automatically add an `id` attribute to the model to be the primary key.
 `autoCreatedAt` | `date` | Current time | Automatically add a `createdAt` date attribute to the model.
 `autoUpdatedAt` | `date` | The created time | Automatically add a `updatedAt` date attribute to the model.
-

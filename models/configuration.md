@@ -65,7 +65,7 @@ It is **extremely important** to set the `migrate` property to `safe` in your mo
 
 #### autoPK
 
-A flag to toggle the automatic primary key generation. Default: `true`. 
+A flag to toggle the automatic primary key generation. Default: `true`.
 
 If turned off no primary key will be created by default and one will need to be defined.
 
@@ -95,7 +95,7 @@ var Foo = Waterline.Collection.extend({
 });
 ```
 
-Note that if this flag is set and the `createdAt` property is supplied on create that value will be used to create the record in the data store.
+Note that if this flag is set and the `createdAt` property is supplied on create that value will be used to create the record in the datastore.
 
 #### autoUpdatedAt
 
@@ -112,7 +112,7 @@ var Foo = Waterline.Collection.extend({
 });
 ```
 
-Note that if this flag is set and the `updatedAt` property is supplied on update, that value will be used to create the record in the data store.
+Note that if this flag is set and the `updatedAt` property is supplied on update, that value will be used to create the record in the datastore.
 
 #### schema
 

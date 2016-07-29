@@ -99,7 +99,7 @@ var config = {
 
 So here we specify the `adapters` we are going to use (one for each type of storage we are going to use), and the `connections` which will usually contain connection details for the target storage system (login details, file paths, etc). Each connection can be named, and in this case we've simply settled on "default" to name the connection.
 
-Ok, it's time to actually crank things up and work with the data store. First we need to initialise the `waterline` instance, and then we can go to work.
+Ok, it's time to actually crank things up and work with the datastore. First we need to initialise the `waterline` instance, and then we can go to work.
 
 ```js
 waterline.initialize(config, function (err, ontology) {

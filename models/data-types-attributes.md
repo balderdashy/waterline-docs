@@ -65,7 +65,7 @@ attributes: {
 #### unique
 
 Ensures no two records will be allowed with the same value. This is a database level constraint so
-in most cases a unique index will be created in the underlying data-store.
+in most cases a unique index will be created in the underlying datastore.
 
 ```javascript
 attributes: {
@@ -154,4 +154,3 @@ attributes: {
 ```
 
 Be warned, that Waterline may implement more keywords in the future which would conflict with any custom keywords in your application.
-
