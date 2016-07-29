@@ -35,7 +35,7 @@ module.exports = {
 
 It's easy to see what's going on in this cross-adapter relationship.  There's a many-to-many ( `N->...` ) relationship between users and products.  In fact, you can imagine a few other relationships (e.g. purchases) which might exist, but since those are probably better-represented using a middleman model, I went for something simple in this example.
 
-Anyways, that's all great... but where does the relationship resource live?  "ProductUser", if you'll pardon with the SQL-oriented nomenclature.  We know it'll end up on one side or the other, but what if we want to control which database it ends up in?
+Anyways, that's all great... but where does the relationship resource live?  "ProductUser", if you'll pardon the SQL-oriented nomenclature.  We know it'll end up on one side or the other, but what if we want to control which database it ends up in?
 
 > **IMPORTANT NOTE**
 >
@@ -104,9 +104,9 @@ Several factors may influence your decision:
 > If a `collection` association does not have a `via` property, it is automatically `dominant: true`.
 
 
-##### What if both collections don't have `via`?
+##### What if neither collection has `via`?
 
-> If both `collections` don't have `via`, then they are not related.  Both are `dominant`, because they are separate relationship tables!!
+> If neither `collection` association has `via`, then they are not related.  Both are `dominant`, because they are separate relationship tables!
 
 ##### What about `model` associations?
 
