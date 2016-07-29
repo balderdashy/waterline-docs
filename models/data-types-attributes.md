@@ -153,5 +153,4 @@ attributes: {
 }
 ```
 
-Be warned, that Waterline may implement more keywords in the future which would conflict with any custom keywords in your application.
 Be warned that Waterline may implement more keywords in the future that would conflict with any custom keywords in your application.
