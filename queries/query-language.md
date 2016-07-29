@@ -1,8 +1,8 @@
 # Query Language
 
-The Waterline Query language is an object based criteria used to retrive the records from any of
+The Waterline Query language is an object based criteria used to retrieve the records from any of
 the supported database adapters. This means that you can use the same query on MySQL as you do on
-Redis or MongoDb. This allows you to change your database without changing your codebase.
+Redis or MongoDB. This allows you to change your database without changing your codebase.
 
 All queries inside of Waterline are case insensitive. This allows for easier querying but makes
 indexing strings tough. This is something to be aware of if you are indexing and searching on string
@@ -57,7 +57,7 @@ Model.find({
 
 ### In Pairs
 
-IN queries work similarly to mysql 'in queries'. Each element in the array is treated as 'or'.
+IN queries work similarly to MySQL 'in queries'. Each element in the array is treated as 'or'.
 
 ```javascript
 Model.find({
