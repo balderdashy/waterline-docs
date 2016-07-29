@@ -31,7 +31,7 @@ The `toObject()` method will return the currently set model values only, without
 methods attached. Useful if you want to change or remove values before sending to the client.
 
 However we provide an even easier way to filter values before returning to the client by allowing
-you to override the toJSON() method in your model.
+you to override the `toJSON()` method in your model.
 
 Example of filtering a password in your model definition:
 
