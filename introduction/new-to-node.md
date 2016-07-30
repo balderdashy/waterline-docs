@@ -9,9 +9,9 @@ More simply put, Node.js is an http server built to run quickly and efficiently 
 
 ## What OS do I need?
 
-Node.js will install on most major Operating systems.  MacOSX, many flavors of Linux, and Windows are supported.
+Node.js will install on most major Operating systems. MacOSX, many flavors of Linux, and Windows are supported.
 
-Now, lets take a look at what OS you have.  Please choose from the following for instructions on setting up Node.js:
+Now, let's take a look at what OS you have.  Please choose from the following for instructions on setting up Node.js:
 
 I have [Mac OSX](#/getStarted?q=--install-on-osx-)
 
@@ -50,7 +50,7 @@ Example install:
     sudo apt-get update
     sudo apt-get install nodejs
 
-It installs current stable Node on the current stable Ubuntu. Quantal (12.10) users may need to install the *software-properties-common* package for the `add-apt-repository` command to work: `sudo apt-get install software-properties-common`
+It installs the current stable Node on the current stable Ubuntu. Quantal (12.10) users may need to install the *software-properties-common* package for the `add-apt-repository` command to work: `sudo apt-get install software-properties-common`
 
 As of Node.js v0.10.0, the nodejs package from [Chris Lea](https://chrislea.com/2013/03/15/upgrading-from-node-js-0-8-x-to-0-10-0-from-my-ppa/)'s repo includes both npm and nodejs-dev.
 
@@ -74,7 +74,7 @@ Node.js is available in the Community Repository.
     pacman -S nodejs
 
 ### Gentoo
-Node.js is available in official gentoo portage tree. You have to unmask it.
+Node.js is available in the official gentoo portage tree. You have to unmask it.
 
     # emerge -aqv --autounmask-write nodejs
     # etc-update
@@ -93,7 +93,7 @@ Then run:
     apt-get update
     apt-get install nodejs
 
-For *Debian Squeeze (oldstable)*, your best bet is to compile node by yourself (as `root`):
+For *Debian Squeeze (oldstable)*, your best bet is to compile Node by yourself (as `root`):
 
     apt-get install python g++ make
     mkdir ~/nodejs && cd $_

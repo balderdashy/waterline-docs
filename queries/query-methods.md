@@ -41,7 +41,7 @@ User.find({ name: 'Walter Jr' })
 
 ### .findOne( `criteria`, [`callback`] )
 
-`findOne` will return an object with the first matching result in the data store.
+`findOne` will return an object with the first matching result in the datastore.
 
 |    Description     | Accepted Data Types             | Required ? |
 |--------------------|---------------------------------|------------|
@@ -92,7 +92,7 @@ using the [Query Language](query-language.md).
 ```javascript
 User.findOrCreate({ name: 'Walter Jr' })
 .exec(function(err, users) {
-//either user(s) with the name 'Walter Jr' get returned or 
+//either user(s) with the name 'Walter Jr' get returned or
 //a single user gets created with the name 'Walter Jr' and returned
 });
 ```
@@ -169,7 +169,7 @@ var title = "The King's Speech";
 Movie.query('SELECT * FROM movie WHERE title = $1', [title], function(err, results) {
   // using sails-postgresql
   console.log('Found the following movie: ', results.rows[0]);
-  
+
   // using sails-mysql
   console.log('Found the following movie: ', results[0]);
 });
@@ -181,10 +181,10 @@ Movie.query('SELECT * FROM movie WHERE title = $1', [title], function(err, resul
 
 ## Aggregates
 
-Some adapters (including [sails-mysql](https://github.com/balderdashy/sails-mysql) and 
-[sails-postgresql](https://github.com/balderdashy/sails-postgresql)) support aggregate queries 
-using specific grouping and aggregation methods. Currently `groupBy` for grouping and `max`, `min`, 
-`sum`, and `average` for aggregation are supported. For SQL based adapters if `groupBy` is used then at least one 
+Some adapters (including [sails-mysql](https://github.com/balderdashy/sails-mysql) and
+[sails-postgresql](https://github.com/balderdashy/sails-postgresql)) support aggregate queries
+using specific grouping and aggregation methods. Currently `groupBy` for grouping and `max`, `min`,
+`sum`, and `average` for aggregation are supported. For SQL based adapters if `groupBy` is used then at least one
 aggregate must be specified as well, and only the aggregated and grouped attributes will be returned in the results.
 
 ### .groupBy( `attribute` or `expression` )
@@ -301,7 +301,3 @@ Movie.find()
 		results[0].revenue;
 	});
 ```
-
-
-
-

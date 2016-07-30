@@ -65,7 +65,7 @@ attributes: {
 #### unique
 
 Ensures no two records will be allowed with the same value. This is a database level constraint so
-in most cases a unique index will be created in the underlying data-store.
+in most cases a unique index will be created in the underlying datastore.
 
 ```javascript
 attributes: {
@@ -82,9 +82,9 @@ Will create a simple index in the underlying datastore for faster queries if ava
 for simple indexes and currently doens't support compound indexes. For these you will need to create
 them yourself or use a migration.
 
-There is currently an issue with adding indexes to string fields. Because Waterline performs it's
+There is currently an issue with adding indexes to string fields. Because Waterline performs its
 queries in a case insensitive manner we are unable to use the index on a string attribute. There are
-some workarounds being discussed but nothing is implemented so far. This will be updated in the
+some workarounds being discussed, but nothing is implemented so far. This will be updated in the
 near future to fully support indexes on strings.
 
 ```javascript
@@ -112,7 +112,7 @@ attributes: {
 
 #### enum
 
-A special validation property which will only allow values which match a whitelisted set of values.
+A special validation property which will only allow values that match a whitelisted set of values.
 
 ```javascript
 attributes: {
@@ -125,7 +125,7 @@ attributes: {
 
 #### size
 
-If supported in the datastore, can be used to define the size of the attribute. For example in MySQL
+If supported in the datastore, can be used to define the size of the attribute. For example, in MySQL
 size can be used with a string to create a column with data type: `varchar(n)`.
 
 ```javascript
@@ -153,5 +153,4 @@ attributes: {
 }
 ```
 
-Be warned, that Waterline may implement more keywords in the future which would conflict with any custom keywords in your application.
-
+Be warned that Waterline may implement more keywords in the future that would conflict with any custom keywords in your application.

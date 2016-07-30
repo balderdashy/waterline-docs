@@ -1,8 +1,8 @@
 # Getting started with Waterline
 
-To get started with Waterline, we need main two ingredients -  adapters and models.
+To get started with Waterline, we need main two ingredients - adapters and models.
 
-The simplest adapter to use is the `sails-memory` adapter so let's install it and Waterline in an empty directory.
+The simplest adapter to use is the `sails-memory` adapter, so let's install it and Waterline in an empty directory.
 
 ```sh
 $ npm install waterline sails-memory
@@ -18,7 +18,7 @@ var sailsMemoryAdapter = require('sails-memory');
 var waterline = new Waterline();
 ```
 
-Here we are simply bootstrapping our main objects. We are setting up the `Waterline` factory object, and instance of an adapter and an instance of `waterline` itself.
+Here we are simply bootstrapping our main objects. We are setting up the `Waterline` factory object, an instance of an adapter and an instance of `waterline` itself.
 
 Next, we define the specification for the user model, like so:
 
@@ -68,9 +68,9 @@ var petCollection = Waterline.Collection.extend({
 });
 ```
 
-Most of the structure is same as for the user. However, the `owner` field specifies the owner of this pet.
+Most of the structure is the same as for the user. However, the `owner` field specifies the owner of this pet.
 
-> In this case, a pet can only have one owner, so we define which model it is associated with. The name of the model needs to marry to the `identity` you give the model. Also in this case, in a relational database this will create a column called `owner` that will contain a foreign key back to the `user` table.
+> In this case, a pet can only have one owner, so we define which model it is associated with. The name of the model needs to marry to the `identity` you give the model. Also, in this case, in a relational database this will create a column called `owner` that will contain a foreign key back to the `user` table.
 
 Next we have some more boring setup chores.
 
@@ -99,7 +99,7 @@ var config = {
 
 So here we specify the `adapters` we are going to use (one for each type of storage we are going to use), and the `connections` which will usually contain connection details for the target storage system (login details, file paths, etc). Each connection can be named, and in this case we've simply settled on "default" to name the connection.
 
-Ok, it's time to actually crank things up and work with the data store. First we need to initialise the `waterline` instance, and then we can go to work.
+Ok, it's time to actually crank things up and work with the datastore. First we need to initialise the `waterline` instance, and then we can go to work.
 
 ```js
 waterline.initialize(config, function (err, ontology) {
@@ -136,11 +136,11 @@ waterline.initialize(config, function (err, ontology) {
 
 That's a fair chunk of code so let's unpack it slower.
 
-First we need to `initialize` the waterline instance. This wires up the connections (maybe logs into a database server or two), parses all the models looking for associations as well as a heap of other whizbangery. When that is done, it defers to the callback we passed in the second argument.
+First we need to `initialize` the waterline instance. This wires up the connections (maybe logs into a database server or two) and parses all the models looking for associations as well as a heap of other whizbangery. When that is done, it defers to the callback we passed in the second argument.
 
 After checking for an error, the `ontology` variable contains the collection objects for our users and our pets, so we add some shortcuts to them in the form of `User` and `Pet`.
 
-> We usually name models in the singular form. That is, what is the _type_ of _object_ the you'd get back from a query.
+> We usually name models in the singular form. That is, what is the _type_ of _object_ that you'd get back from a query.
 
 We will use some Promise goodness to create a user and a pet and see what we can get back out of the datastore.
 
@@ -154,7 +154,7 @@ Once the pet is created we have both sides of the association ready. To join the
 
 > Note that `save` is only available on the model objects returned by the query. Our `User` collection object does not have access to this.
 
-Finally, we want to see what actually got stuffed into the database, so we use `User.find` to get all the `User` records out of the datastore. We also want the query to resolve the pet association so we add the `populate` method to tell the query to go find the pet records for each user.
+Finally, we want to see what actually got stuffed into the database, so we use `User.find` to get all the `User` records out of the datastore. We also want the query to resolve the pet association, so we add the `populate` method to tell the query to go find the pet records for each user.
 
 Running that simple application gives us:
 

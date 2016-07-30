@@ -1,6 +1,6 @@
 # Waterline Associations
 
-With Waterline you can associate models with other models across all data stores. This means that
+With Waterline you can associate models with other models across all datastores. This means that
 your users can live in PostgreSQL and their photos can live in MongoDB and you can interact with
 the data as if they lived together on the same database. You can also have associations that
 live on separate connections or in different databases within the same adapter.
@@ -13,4 +13,3 @@ how to setup and query associated data.
 * [Many-to-many](many-to-many.md)
 * [Many-to-many through](many-to-many-through.md)
 * [Dominance](dominance.md)
-

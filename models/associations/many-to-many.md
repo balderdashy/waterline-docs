@@ -12,9 +12,9 @@ is needed on the `collection` attribute. This states which `model` attribute on 
 association is used to populate the records.
 
 You will also need to add a `dominant` property on one side of the association. This allows Waterline
-to know which side it can write the joinTable to in the case of different connections.
+to know which side it can write the join table to in the case of different connections.
 
-Using the `User` and `Pet` example lets look at how to build a schema where a `User` may have many
+Using the `User` and `Pet` example, let's look at how to build a schema where a `User` may have many
 `Pet` records and a `Pet` may have multiple owners.
 
 ```javascript
@@ -58,7 +58,7 @@ var Pet = Waterline.Collection.extend({
 ```
 
 Now that the `User` and `Pet` models have been created and the join table has been setup
-automatically, we can start associating records and querying the join table. To do this lets add a
+automatically, we can start associating records and querying the join table. To do this, let's add a
 `User` and `Pet` and then associate them together.
 
 There are two ways of creating associations when a many-to-many association is used. You can associate
@@ -66,9 +66,9 @@ two existing records together or you can associate a new record to the existing 
 this is done we will introduce the special methods attached to a `collection` attribute: `add` and `remove`.
 
 Both these methods are sync methods that will queue up a set of operations to be run when an instance
-is saved. If a primary key is used for the value on an `add` a new record in the join table will be
+is saved. If a primary key is used for the value on an `add`, a new record in the join table will be
 created linking the current model to the record specified in the primary key. However if an object
-is used as the value in an `add` a new model will be created and then the primary key of that model
+is used as the value in an `add`, a new model will be created and then the primary key of that model
 will be used in the new join table record. You can also use an array of previous values.
 
 ## When Both Records Exist

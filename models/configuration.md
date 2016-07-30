@@ -2,7 +2,7 @@
 
 ## Configuration
 
-You can define certain top level properties on a per model basis. These will define how your schema
+You can define certain top level properties on a per-model basis. These will define how your schema
 is synced with the datastore and allows you to turn off default behaviour.
 
 #### identity
@@ -25,8 +25,8 @@ either a string or an array for the value of this property. If an array is used 
 access to methods defined on both adapters in the connections. They will inherit from right to left
 giving the adapter from the first connection priority in adapter methods.
 
-So for example if you defined connections using both `sails-postgresql` and `sails-mandrill` and the
-`sails-mandrill` adapter exposes a `send` method your model will contain all the CRUD methods exposed
+For example, if you defined connections using both `sails-postgresql` and `sails-mandrill` and the
+`sails-mandrill` adapter exposes a `send` method, your model will contain all the CRUD methods exposed
 from `sails-postgresql` as well as a `send` method which will be run on the mandrill adapter.
 
 ```javascript
@@ -65,7 +65,7 @@ It is **extremely important** to set the `migrate` property to `safe` in your mo
 
 #### autoPK
 
-A flag to toggle the automatic primary key generation. Default: `true`. 
+A flag to toggle the automatic primary key generation. Default: `true`.
 
 If turned off no primary key will be created by default and one will need to be defined.
 
@@ -95,7 +95,7 @@ var Foo = Waterline.Collection.extend({
 });
 ```
 
-Note that if this flag is set and the `createdAt` property is supplied on create that value will be used to create the record in the data store.
+Note that if this flag is set and the `createdAt` property is supplied on create that value will be used to create the record in the datastore.
 
 #### autoUpdatedAt
 
@@ -112,7 +112,7 @@ var Foo = Waterline.Collection.extend({
 });
 ```
 
-Note that if this flag is set and the `updatedAt` property is supplied on update, that value will be used to create the record in the data store.
+Note that if this flag is set and the `updatedAt` property is supplied on update, that value will be used to create the record in the datastore.
 
 #### schema
 
@@ -120,7 +120,7 @@ A flag to toggle schemaless or schema mode in databases that support schemaless 
 turned off this will allow you to store arbitrary data in a record. If turned on, only attributes
 defined in the model's attributes object will be allowed to be stored.
 
-For adapters that don't require a schema such as Mongo or Redis the default setting is to be
+For adapters that don't require a schema (such as Mongo or Redis) the default setting is to be
 schemaless.
 
 ```javascript
