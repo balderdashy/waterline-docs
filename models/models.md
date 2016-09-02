@@ -130,11 +130,11 @@ var Widget = Waterline.Collection.extend({
       type: 'text',
       columnName: 'wb_description'
     }
-    migrate: 'safe',
-    autoPK: false,
-    autoCreatedAt: false,
-    autoUpdatedAt: false,
-  }
+  },
+  migrate: 'safe',
+  autoPK: false,
+  autoCreatedAt: false,
+  autoUpdatedAt: false
 });
 ```
 In addition, settings for automatically generating the primary key field (`autoPK`), the created timestamp (`autoCreatedAt`), and the modified timestamp (`autoUpdatedAt`) are disabled in this example because either the model specifies them specifically, or they are actually absent from the existing database table.
