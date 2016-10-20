@@ -1,4 +1,7 @@
-# Creating Adapters for Waterline
+> This documentation page lives at [http://sailsjs.com/docs/concepts/extending-sails/adapters](http://sailsjs.com/docs/concepts/extending-sails/adapters).
+
+
+<!-- # Creating Adapters for Waterline
 
 Adapters are the *glue* connecting Waterline core to the different datastores. Adapters expose 
 [interfaces](https://github.com/balderdashy/sails-docs/blob/master/contributing/adapter-specification.md), which imply a 
@@ -62,3 +65,4 @@ $ npm test
 ## Other References
 * [sails-docs - Intro to custom adapters](https://github.com/balderdashy/sails-docs/blob/master/contributing/intro-to-custom-adapters.md)
 * [sails-docs - Adapters.md](https://github.com/balderdashy/sails-docs/blob/master/concepts/extending-sails/Adapters/Adapters.md): general description of what an adapter is
+ -->

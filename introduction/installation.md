@@ -1,4 +1,7 @@
-# Waterline Installation
+> This documentation page lives at [http://sailsjs.com/docs/concepts/models-and-orm/standalone-waterline-usage](http://sailsjs.com/docs/concepts/models-and-orm/standalone-waterline-usage).
+
+
+<!-- # Waterline Installation
 
 Waterline is available via NPM.
 
@@ -17,3 +20,4 @@ You can install any number of adapters into your application.
 The `sails-disk` and `sails-memory` adapters are common choices for development and testing.
 
 If you are new to Node, we have a [guide](new-to-node.md) to help you get started on your preferred platform.
+ -->

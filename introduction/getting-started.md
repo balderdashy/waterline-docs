@@ -1,4 +1,7 @@
-# Getting started with Waterline
+> This documentation page lives at [http://sailsjs.com/docs/concepts/models-and-orm/standalone-waterline-usage](http://sailsjs.com/docs/concepts/models-and-orm/standalone-waterline-usage).
+
+
+<!-- # Getting started with Waterline
 
 To get started with Waterline, we need main two ingredients - adapters and models.
 
@@ -177,4 +180,4 @@ $ node getting-started.js
 
 Interesting. There are the attributes we gave the models, and we can also see the primary keys that were automatically generated for us. We can also see that waterline has thrown in some default `createdAt` and `updatedAt` timestamps too. Cool!
 
-> You can turn off the timestamps with other global or per-model configuration options.
+> You can turn off the timestamps with other global or per-model configuration options. -->

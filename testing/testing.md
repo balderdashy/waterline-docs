@@ -1,53 +1,8 @@
-# Testing Waterline with automated tests
+> This documentation page lives at [http://sailsjs.com/docs/concepts/testing](http://sailsjs.com/docs/concepts/testing).
 
-## Why testing is important
 
-> The purpose of a good architecture is to delay or defer decisions. This is so we have more information when we have time to make it.
-  A good architecture does not commit to the major decisions we are going to make: what database, schema, db technology, framework.
-> A good architect maximises the decisions not made.
-> - Robert Martin
 
-Testing is an incredibly important discipline to master in software development. Even when working by yourself on your own code, you are always working in a team of at least two, but probably more: your present self, and your future iterations that will wonder what on earth you were thinking when writing the code you are writing now.
-
-When you haven't touched your code for months, and a client asks you to make a small change, how can you be confident the system is not going to come crashing down around you?
-
-While they are not silver bullets, automated tests do help to increase the confidence that when your code reaches a production environment, it is doing so in a predicable manner. Generally well tested code will take a little longer to write, particularly if you practice test-driven development methodologies, but the cost reductions due to a decrease in post-release bug related issues generally more than compensate the effort.
-
-On this basis, the wise developer will be thinking not only about how to craft their models and database schemas and application design, but is also constantly questioning whether the code that is being written is testable.
-
-With that in mind, there are a number of class of automated tests the a keen developer should be aware of.
-
-**Unit tests** are about testing small units of code in isolation from the rest of the system that is using the code. Dependencies are usually mocked to stub to simulate various states of behaviour as they interact with the unit code you are testing.
-
-**Integration tests** are about testing chunks of code that work together as a whole, and try to simulate how the system will behave on wild, production environments. Integration tests can also be used for end-to-end testing of the application itself such as testing the request and response behaviour on a RESTful API server.
-
-The most practical of the two for Waterline are integration tests. Models are particularly difficult to model correctly using unit tests (you spend so much effort trying to mock the behaviour of the surrounding system that you might as well just use the real system).
-
-## The testing framework
-
-To run the tests we need a testing framework. There are a few around but for our examples we will be using [Mocha](mochajs.org). It's best to install this on the command line like so:
-
-```js
-$ npm install -g mocha
-```
-
-If you are interested in code coverage, you might also like to research a tool called [Istanbul](https://www.npmjs.com/package/istanbul). For spying, stubbing, and mocking [Sinon](http://sinonjs.org) is a good choice. For simulating HTTP requests, [nock](https://www.npmjs.com/package/nock) is worth a look.
-
-## A test example.
-
-The following example illustrates how you might attempt to test a Waterline model. It assumes the following, and extremely simple, application structure:
-
-```none
-root
-|- models
-|  |- Pet.js
-|  `- User.js
-`- test
-   |- mocha.opts
-   `- UserModelTest.js
-```
-
-### `Pet.js`
+<!-- ### `Pet.js`
 
 Our standard example Pet model.
 
@@ -192,5 +147,4 @@ $ mocha
 
   1 passing (83ms)
 ```
-
-Whoot! It works.
+Huzzah! It works. -->
