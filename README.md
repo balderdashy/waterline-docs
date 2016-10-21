@@ -45,6 +45,7 @@ A list of officially supported adapters can be found [here](http://sailsjs.com/d
 A list of community adapters can be found [here](http://sailsjs.com/docs/concepts/extending-sails/adapters/available-adapters#?community-supported-database-adapters).
 
 
+<!-- 
 ## Core modules
 
 | Repo          |  Build Status (edge)                  |  Latest Stable Version   |
@@ -59,4 +60,4 @@ A list of community adapters can be found [here](http://sailsjs.com/docs/concept
 | Integration tests | Status |
 |-------------------|--------|
 | Edge waterline core <-> edge official adapters | [![Build Status](https://travis-ci.org/balderdashy/waterline-adapter-tests.svg?branch=master)](https://travis-ci.org/balderdashy/waterline-adapter-tests) |
-
+-->
