@@ -1,2 +1,1 @@
-> This documentation page lives at [http://sailsjs.com/docs/concepts/models-and-orm/standalone-waterline-usage](http://sailsjs.com/docs/concepts/models-and-orm/standalone-waterline-usage).
-
+> The Waterline documentation now lives in [the Sails documentation](http://sailsjs.com/docs/concepts/models-and-orm/).

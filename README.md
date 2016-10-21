@@ -1,6 +1,9 @@
-# Waterline v0.10 Documentation
+# Waterline Documentation
+
+> The Waterline documentation now lives in [the Sails documentation](http://sailsjs.com/docs/concepts/models-and-orm/).
 
 ## Table of Contents
+
 
 * [Introduction](http://sailsjs.com/docs/concepts/models-and-orm/standalone-waterline-usage)
   * [Installation](http://sailsjs.com/docs/concepts/models-and-orm/standalone-waterline-usage)
@@ -22,12 +25,14 @@
   * [Query Methods](queries/query-methods.md)
 * [Adapters](adapters/adapters.md)
 * [Testing](http://sailsjs.com/docs/concepts/testing)
-* [Examples](http://sailsjs.com/docs/concepts/models-and-orm/standalone-waterline-usage)
+* [Examples](http://sailsjs.com/docs/concepts/models-and-orm/)
 * [Roadmap](ROADMAP.md)
 
 ## Supported Adapters
 
-|    Name                                                                         | Maintainer                                   | Build Status (edge)                                                                                                                         | Latest Stable Version                                                                                     |
+A list of officially supported adapters can be found [here](http://sailsjs.com/docs/concepts/extending-sails/adapters/available-adapters#?officially-supported-database-adapters).
+
+<!-- |    Name                                                                         | Maintainer                                   | Build Status (edge)                                                                                                                         | Latest Stable Version                                                                                     |
 |---------------------------------------------------------------------------------|----------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------|
 | [Sails-PostgreSQL](https://github.com/balderdashy/sails-postgresql)             | [balderdash](https://github.com/balderdashy) | [![Build Status](https://travis-ci.org/balderdashy/sails-postgresql.svg?branch=master)](https://travis-ci.org/balderdashy/sails-postgresql) | [![npm version](https://badge.fury.io/js/sails-postgresql.svg)](http://badge.fury.io/js/sails-postgresql) |
 | [Sails-MySQL](https://github.com/balderdashy/sails-mysql)                       | [balderdash](https://github.com/balderdashy) | [![Build Status](https://travis-ci.org/balderdashy/sails-mysql.svg?branch=master)](https://travis-ci.org/balderdashy/sails-mysql)           | [![npm version](https://badge.fury.io/js/sails-mysql.svg)](http://badge.fury.io/js/sails-mysql)           |
@@ -35,19 +40,10 @@
 | [Sails-Redis](https://github.com/balderdashy/sails-redis)                       | [balderdash](https://github.com/balderdashy) | [![Build Status](https://travis-ci.org/balderdashy/sails-redis.svg?branch=master)](https://travis-ci.org/balderdashy/sails-redis)           | [![npm version](https://badge.fury.io/js/sails-redis.svg)](http://badge.fury.io/js/sails-redis) 
 | [Sails-Disk](https://github.com/balderdashy/sails-disk)                         | [balderdash](https://github.com/balderdashy) | [![Build Status](https://travis-ci.org/balderdashy/sails-disk.svg?branch=master)](https://travis-ci.org/balderdashy/sails-disk)             | [![npm version](https://badge.fury.io/js/sails-disk.svg)](http://badge.fury.io/js/sails-disk) 
 | [Sails-Memory](https://github.com/balderdashy/sails-memory)                     | [balderdash](https://github.com/balderdashy) | [![Build Status](https://travis-ci.org/balderdashy/sails-memory.svg?branch=master)](https://travis-ci.org/balderdashy/sails-memory)         | [![npm version](https://badge.fury.io/js/sails-memory.svg)](http://badge.fury.io/js/sails-memory) 
-
+ -->
 ## Community Adapters
 
-|    Name                                                                         | Maintainer                                   | Build Status (edge)                                                                                                                         | Latest Stable Version                                                                                     |
-|---------------------------------------------------------------------------------|----------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------|
-| [Sails-MSsqlserver](https://github.com/misterGF/sails-mssqlserver)                     | [misterGF](https://github.com/misterGF)           | [![Build status](https://img.shields.io/circleci/project/cnect/sails-sqlserver.svg?style=flat-square)](https://circleci.com/gh/cnect/sails-sqlserver) | [![NPM version](https://img.shields.io/npm/v/sails-sqlserver.svg?style=flat-square)](https://npmjs.org/package/sails-sqlserver)|
-| [Sails-OrientDB](https://github.com/appscot/sails-orientdb)                     | [appscot](https://github.com/appscot)        | [![Build Status](https://travis-ci.org/appscot/sails-orientdb.svg?branch=master)](https://travis-ci.org/appscot/sails-orientdb)             | [![npm version](https://badge.fury.io/js/sails-orientdb.svg)](http://badge.fury.io/js/sails-orientdb)|
-| [Sails-REST](https://github.com/zohararad/sails-rest)                           | [zohararad](https://github.com/zohararad)    |||
-| [Sails-Oracle](https://github.com/atiertant/sails-oracle)                       | [atiertant](https://github.com/atiertant)    |||
-| [Sails-Cassandra](https://github.com/dtoubelis/sails-cassandra)                 | [dtoubelis](https://github.com/dtoubelis)    | [![Build Status](https://travis-ci.org/dtoubelis/sails-cassandra.svg?branch=master)](https://travis-ci.org/dtoubelis/sails-cassandra) | [![npm version](https://badge.fury.io/js/sails-cassandra.svg)](http://badge.fury.io/js/sails-cassandra) |
-| [Sails-Solr](https://github.com/sajov/sails-solr)                               | [sajov](https://github.com/sajov)            | [![Build Status](https://travis-ci.org/sajov/sails-solr.svg?branch=master)](https://travis-ci.org/sajov/sails-solr)                   | [![npm version](https://badge.fury.io/js/sails-solr.svg)](http://badge.fury.io/js/sails-solr) 
-
-If you have an adapter you would like added, submit a PR and add it to the list.
+A list of community adapters can be found [here](http://sailsjs.com/docs/concepts/extending-sails/adapters/available-adapters#?community-supported-database-adapters).
 
 
 ## Core modules
