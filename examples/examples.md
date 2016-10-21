@@ -1,4 +1,2 @@
-# Waterline examples and tutorials
+> This documentation page lives at [http://sailsjs.com/docs/concepts/models-and-orm/standalone-waterline-usage](http://sailsjs.com/docs/concepts/models-and-orm/standalone-waterline-usage).
 
-* [Getting started code](src/getting-started.js)
-* [Delete a password attribute when converting to JSON](src/delete-password-json.js)
