@@ -22,7 +22,7 @@
   * [Query Methods](queries/query-methods.md)
 * [Adapters](adapters/adapters.md)
 * [Testing](http://sailsjs.com/docs/concepts/testing)
-* [Examples](examples/examples.md)
+* [Examples](http://sailsjs.com/docs/concepts/models-and-orm/standalone-waterline-usage)
 * [Roadmap](ROADMAP.md)
 
 ## Supported Adapters
@@ -40,7 +40,7 @@
 
 |    Name                                                                         | Maintainer                                   | Build Status (edge)                                                                                                                         | Latest Stable Version                                                                                     |
 |---------------------------------------------------------------------------------|----------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------|
-| [Sails-SQLServer](https://github.com/cnect/sails-sqlserver)                     | [c*nect](https://github.com/cnect)           | [![Build status](https://img.shields.io/circleci/project/cnect/sails-sqlserver.svg?style=flat-square)](https://circleci.com/gh/cnect/sails-sqlserver) | [![NPM version](https://img.shields.io/npm/v/sails-sqlserver.svg?style=flat-square)](https://npmjs.org/package/sails-sqlserver)|
+| [Sails-MSsqlserver](https://github.com/misterGF/sails-mssqlserver)                     | [misterGF](https://github.com/misterGF)           | [![Build status](https://img.shields.io/circleci/project/cnect/sails-sqlserver.svg?style=flat-square)](https://circleci.com/gh/cnect/sails-sqlserver) | [![NPM version](https://img.shields.io/npm/v/sails-sqlserver.svg?style=flat-square)](https://npmjs.org/package/sails-sqlserver)|
 | [Sails-OrientDB](https://github.com/appscot/sails-orientdb)                     | [appscot](https://github.com/appscot)        | [![Build Status](https://travis-ci.org/appscot/sails-orientdb.svg?branch=master)](https://travis-ci.org/appscot/sails-orientdb)             | [![npm version](https://badge.fury.io/js/sails-orientdb.svg)](http://badge.fury.io/js/sails-orientdb)|
 | [Sails-REST](https://github.com/zohararad/sails-rest)                           | [zohararad](https://github.com/zohararad)    |||
 | [Sails-Oracle](https://github.com/atiertant/sails-oracle)                       | [atiertant](https://github.com/atiertant)    |||
