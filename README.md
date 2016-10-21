@@ -1,6 +1,6 @@
 # Waterline Documentation
 
-> The Waterline documentation now lives in [the Sails documentation](http://sailsjs.com/docs/concepts/models-and-orm/).
+> **NOTE** The Waterline documentation now lives in [the Sails documentation](http://sailsjs.com/docs/concepts/models-and-orm/). The links in the table of contents below will now bring you to the applicable doc pages on the [Sails website](http://sailsjs.com).
 
 ## Table of Contents
 
