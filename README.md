@@ -17,15 +17,18 @@
     - [Many-to-many](http://sailsjs.com/docs/concepts/models-and-orm/associations/many-to-many)
     - [Many-to-many through](http://sailsjs.com/docs/concepts/models-and-orm/associations/through-associations)
     - [Dominance](http://sailsjs.com/docs/concepts/models-and-orm/associations/dominance)
-  * [Instance & Class Methods](models/instance-class-methods.md)
+  * [Instance & Class Methods](http://sailsjs.com/docs/concepts/models-and-orm/models#?model-methods-aka-static-or-class-methods)
   * [Configuration](http://sailsjs.com/docs/concepts/models-and-orm/model-settings)
+    - [Model settings](http://sailsjs.com/docs/concepts/models-and-orm/model-settings)
+    - [Datastore config](http://sailsjs.com/docs/reference/configuration/sails-config-connections)
+    - [Default model settings](http://sailsjs.com/docs/reference/configuration/sails-config-models)
 * [Queries](http://sailsjs.com/docs/concepts/models-and-orm/queries)
   * [Query Language](http://sailsjs.com/docs/concepts/models-and-orm/query-language)
   * [Query Methods](queries/query-methods.md)
-* [Adapters](adapters/adapters.md)
+* [Adapters](http://sailsjs.com/docs/concepts/extending-sails/adapters)
 * [Testing](http://sailsjs.com/docs/concepts/testing)
-* [Examples](http://sailsjs.com/docs/concepts/models-and-orm/)
-* [Roadmap](ROADMAP.md)
+* [Examples & Support](http://sailsjs.com/support)
+* [Roadmap](http://sailsjs.com/roadmap)
 
 ## Supported Adapters
 
