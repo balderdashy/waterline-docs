@@ -1,4 +1,1 @@
-# Waterline examples and tutorials
-
-* [Getting started code](src/getting-started.js)
-* [Delete a password attribute when converting to JSON](src/delete-password-json.js)
+> The Waterline documentation now lives in [the Sails documentation](http://sailsjs.com/docs/concepts/models-and-orm/).

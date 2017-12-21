@@ -1,3 +1,1 @@
-# Integrating Waterline with other frameworks
-
-* [Sails](sails.md)
+> The Waterline documentation now lives in [the Sails documentation](http://sailsjs.com/docs/concepts/models-and-orm/).
