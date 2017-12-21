@@ -1,5 +1,25 @@
 # Waterline Documentation
 
+```js
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+//  ██╗    ██╗ █████╗ ██████╗ ███╗   ██╗██╗███╗   ██╗ ██████╗ ██╗
+//  ██║    ██║██╔══██╗██╔══██╗████╗  ██║██║████╗  ██║██╔════╝ ██║
+//  ██║ █╗ ██║███████║██████╔╝██╔██╗ ██║██║██╔██╗ ██║██║  ███╗██║
+//  ██║███╗██║██╔══██║██╔══██╗██║╚██╗██║██║██║╚██╗██║██║   ██║╚═╝
+//  ╚███╔███╔╝██║  ██║██║  ██║██║ ╚████║██║██║ ╚████║╚██████╔╝██╗
+//   ╚══╝╚══╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝╚═╝╚═╝  ╚═══╝ ╚═════╝ ╚═╝
+//                                                               
+// WARNING: The content in this folder may be out of date!
+//
+// > The official Waterline documentation now lives in the Sails documentation:
+// >   http://sailsjs.com/docs/concepts/models-and-orm/).
+// 
+// This content has only been left here to try and maintain the quality of older search engine links.
+// Please be sure and visit the link above for the most recent and up-to-date docs.
+//  [?] If you're unsure, drop by https://sailsjs.com/support
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+```
+
 ## Table of Contents
 
 > The Waterline documentation now lives in [the Sails documentation](http://sailsjs.com/docs/concepts/models-and-orm/). These links will bring you to the applicable doc pages on the [Sails website](http://sailsjs.com).
@@ -65,3 +85,8 @@ A list of community adapters can be found [here](http://sailsjs.com/docs/concept
 |-------------------|--------|
 | Edge waterline core <-> edge official adapters | [![Build Status](https://travis-ci.org/balderdashy/waterline-adapter-tests.svg?branch=master)](https://travis-ci.org/balderdashy/waterline-adapter-tests) |
 -->
+
+
+## Help / Questions
+
+If you're unsure or could use some advice, [click here](https://sailsjs.com/support).
